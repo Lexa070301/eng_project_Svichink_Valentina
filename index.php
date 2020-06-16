@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
     <title>Savlas</title>
@@ -174,7 +175,7 @@
     <div class="row">
         <div class="col-6 d-flex justify-content-center align-items-center">
             <img src="img/about.jpg" class="img-fluid img-about" alt="Author of the project" width="300">
-            <div class="row__pink"></div>
+            <div class="shadow row__pink"></div>
         </div>
         <div class="col-6 d-flex justify-content-center align-items-center">
             <p class="text-center bg-white p-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus consequuntur harum veritatis suscipit atque modi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, est? Excepturi quod rem tenetur culpa veritatis dicta alias nisi rerum.</p>
@@ -283,6 +284,25 @@
 
 </div>
 </main>
+
+<footer>
+    <div class="container-fluid">
+        <div class="row bg-dark d-flex flex-column">
+        <div class="d-flex">
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <p class="text-light">Instagram</p>
+        </div>
+        <div class="d-flex">
+            <i class="fa fa-facebook text-white" aria-hidden="true"></i>
+            <p class="text-light">Facebook</p>
+        </div>
+        <div class="align-self-end d-flex">
+            <i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
+            <p class="text-light">2020 savlas</p>
+        </div>
+        </div>
+    </div>
+</footer>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
