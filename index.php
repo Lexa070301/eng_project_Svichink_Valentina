@@ -21,8 +21,8 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-md-0">
       <li class="nav-item d-flex">
-        <a class="nav-link text-light" href="#!">Главная</a>
-        <a class="nav-link text-light" href="#!">Наша продукция</a>
+      <a class="nav-link text-light" href="http://savlas.std-938.ist.mospolytech.ru/">Главная</a>
+        <a class="nav-link text-light" href="http://savlas.std-938.ist.mospolytech.ru/index2.php">Наша продукция</a>
         <a class="nav-link text-light" href="#!">Продукция других брендов</a>
         <a class="nav-link text-light" href="#!">Личный кабинет</a>
       </li>
