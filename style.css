@@ -36,3 +36,17 @@ main{
 .carousel-item .card{
     width: 90% !important;
 }
+
+.row__pink{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 30px;
+    left: 190px;
+    background-color: #FDECEF;
+    z-index: 1;
+}
+
+.img-about{
+    z-index: 10;
+}

@@ -34,6 +34,7 @@
 <div class="main_cont">
 
      
+<div class="carousel my-5">
 <div id="carouselExampleIndicators" class="carousel slide w-75" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -68,42 +69,216 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-<br> 
+</div>
 
-<button type="button" class="btn btn-dark btn-lg btn-block ">Смотреть продукцию от SAVLAS</button>
+<button type="button" class="btn btn-dark btn-lg btn-block mb-5">Смотреть продукцию от SAVLAS</button>
+
+<div id="carouselExampleSlidesOnly" class="carousel slide">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="row no-gutters">
+                <div class="col-1"></div>
+                <div class="col">
+                    <img class="img-fluid" src="img/red_hearts.jpg">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text">Бомбочки для ванны в виде сердец </p>
+                            <a href="#!" class="card-link text-warning">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <img class="img-fluid" src="img/blue_bomb.jpg">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text">Мятная бомбочка - сердце </p>
+                            <a href="#!" class="card-link text-warning">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <img class="img-fluid" src="img/bomb_flower.jpg">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text">Цветочная бомбочка для ванн</p>
+                            <a href="#!" class="card-link text-warning">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <img class="img-fluid" src="img/balls.jpg">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text">Скрабы одноразовые "Сахарные конфетки"</p>
+                            <a href="#!" class="card-link text-warning">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="row no-gutters">
+            <div class="col-1"></div>
+                <div class="col">
+                    <img class="img-fluid" src="img/cube_line.jpg">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text">Скрабы одноразовые "Рахат лукум"</p>
+                            <a href="#!" class="card-link text-warning">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <img class="img-fluid" src="img/dug.jpg">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text">Бомбочка для ванны "Уточка" </p>
+                            <a href="#!" class="card-link text-warning">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <img class="img-fluid" src="img/diamond.jpg">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text">Бомбочки для ванн "Кристалл"</p>
+                            <a href="#!" class="card-link text-warning">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <img class="img-fluid" src="img/love.jpg">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text">Бомбочка для ванн "Love"</p>
+                            <a href="#!" class="card-link text-warning">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleSlidesOnly" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleSlidesOnly" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-6 d-flex justify-content-center align-items-center">
+            <img src="img/about.jpg" class="img-fluid img-about" alt="Author of the project" width="300">
+            <div class="row__pink"></div>
+        </div>
+        <div class="col-6 d-flex justify-content-center align-items-center">
+            <p class="text-center bg-white p-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus consequuntur harum veritatis suscipit atque modi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, est? Excepturi quod rem tenetur culpa veritatis dicta alias nisi rerum.</p>
+        </div>
+    </div>
+</div>
 <br>
+<button type="button" class="btn btn-dark btn-lg btn-block my-5">Смотреть продукцию других брендов</button>
 
-<div id="carouselExampleIndicators" class="carousel slide">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="img/red_hearts.jpg" alt="First slide" width="200">
-            <img src="img/blue_bomb.jpg" alt="First slide" width="200">
-      <img src="img/bomb_flower.jpg" alt="First slide" width="200">
+<div id="carouselExampleSlidesOnly2" class="carousel slide mb-5">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="row no-gutters">
+                <div class="col-1"></div>
+                <div class="col">
+                    <img class="img-fluid" src="img/leo1.jpg">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text">LEOSILVER <br>Крем для стоп<br></p>
+                            <a href="#!" class="card-link text-warning">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <img class="img-fluid" src="img/let1.jpg">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text">LETIQUE<br>Холодное обертывание</p>
+                            <a href="#!" class="card-link text-warning">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <img class="img-fluid" src="img/bb1.jpg">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text">BUBBLE_BAR<br>Набор для SPA "Милка"</p>
+                            <a href="#!" class="card-link text-warning">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <img class="img-fluid" src="img/freshtime1.jpg">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text">FRESHTIME<br>Шиммер для ванны<br></p>
+                            <a href="#!" class="card-link text-warning">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="row no-gutters">
+            <div class="col-1"></div>
+                <div class="col">
+                    <img class="img-fluid" src="img/leo2.jpg">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text">LEOSILVER <br>Морская соль для ванн</p>
+                            <a href="#!" class="card-link text-warning">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <img class="img-fluid" src="img/let2.jpg">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text">LETIQUE<br>Набор "Авокадо"<br></p>
+                            <a href="#!" class="card-link text-warning">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <img class="img-fluid" src="img/bb2.jpg">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text">BUBBLE_BAR<br>Набор для SPA "Принцесса"</p>
+                            <a href="#!" class="card-link text-warning">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <img class="img-fluid" src="img/let3.jpg">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text">LETIQUE<br>Горячее обертывание<br></p>
+                            <a href="#!" class="card-link text-warning">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+            </div>
+        </div>
     </div>
-    <div class="carousel-item">
-      <img src="img/balls.jpg" alt="Second slide" width="200">
-            <img src="img/cube_line.jpg" alt="First slide" width="200">
-      <img src="img/dug.jpg" alt="First slide" width="200">
-    </div>
-    <div class="carousel-item">
-      <img src="img/diamond.jpg" alt="Third slide" width="200">
-            <img src="img/g1.jpg" alt="First slide" width="200">
-      <img src="img/love.jpg" alt="First slide" width="200">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+    <a class="carousel-control-prev" href="#carouselExampleSlidesOnly2" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleSlidesOnly2" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
 </div>
 
 </div>
