@@ -23,8 +23,8 @@
       <li class="nav-item d-flex">
       <a class="nav-link text-light" href="http://savlas.std-938.ist.mospolytech.ru/">Главная</a>
         <a class="nav-link text-light" href="http://savlas.std-938.ist.mospolytech.ru/index2.php">Наша продукция</a>
-        <a class="nav-link text-light" href="#!">Продукция других брендов</a>
-        <a class="nav-link text-light" href="#!">Личный кабинет</a>
+        <a class="nav-link text-light" href="http://savlas.std-938.ist.mospolytech.ru/index3.php">Продукция других брендов</a>
+        <a class="nav-link text-light" href="http://savlas.std-938.ist.mospolytech.ru/index4.php">Личный кабинет</a>
       </li>
     </ul>
   </div>
@@ -288,17 +288,17 @@
 <footer>
     <div class="container-fluid">
         <div class="row bg-dark d-flex flex-column">
-        <div class="d-flex">
-            <i class="fa fa-instagram" aria-hidden="true"></i>
-            <p class="text-light">Instagram</p>
+        <div class="d-flex  my-2">
+            <img src="img/inst.svg" alt="icon instagram">
+            <a href="#" class="text-light ml-1">Instagram</a>
         </div>
         <div class="d-flex">
-            <i class="fa fa-facebook text-white" aria-hidden="true"></i>
-            <p class="text-light">Facebook</p>
+          <img src="img/facebook.svg" alt="icon facebook">
+          <a href="#" class="text-light align-self-center ml-1">Facebook</a>
         </div>
         <div class="align-self-end d-flex">
-            <i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
-            <p class="text-light">2020 savlas</p>
+          <img src="img/copyright.svg" alt="icon copyright">
+          <a href="#" class="text-light ml-1">2020 savlas</a>
         </div>
         </div>
     </div>
