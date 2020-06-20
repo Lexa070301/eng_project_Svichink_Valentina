@@ -42,32 +42,32 @@
     </div>
 
     <div class="row">
-            <form class="w-100">
+            <form class="w-100" action="index4.php" method="post">
                 <div class="container-fluid  d-flex flex-wrap flex-row">
                     <div class="form-group w-sm-100 w-mb-50 w-lg-25 w-xl-25 mx-5">
                         <label for="name">Имя</label>
-                        <input type="text" class="form-control" id="name" placeholder="Имя">
+                        <input type="text" class="form-control" id="name" placeholder="Имя" name="name">
                     </div>
                     <div class="form-group w-sm-100 w-mb-50 w-lg-25 w-xl-25 mx-5">
                         <label for="surname">Фамилия</label>
-                        <input type="text" class="form-control" id="surname" placeholder="Фамилия">
+                        <input type="text" class="form-control" id="surname" placeholder="Фамилия" name="surname">
                     </div>
                     <div class="form-group w-sm-100 w-mb-50 w-lg-25 w-xl-25 mx-5">
                         <label for="parname">Отчество</label>
-                        <input type="text" class="form-control" id="parname" placeholder="Отчество">
+                        <input type="text" class="form-control" id="parname" placeholder="Отчество" name="parname">
                     </div>
 
                     <div class="form-group w-sm-100 w-mb-50 w-lg-25 w-xl-25 mx-5">
                         <label for="email">E-mail</label>
-                        <input type="email" class="form-control" id="email" placeholder="E-mail">
+                        <input type="email" class="form-control" id="email" placeholder="E-mail" name="email">
                     </div>
                     <div class="form-group w-sm-100 w-mb-50 w-lg-25 w-xl-25 mx-5">
                         <label for="birth">Дата рождения</label>
-                        <input type="text" class="form-control" id="birth" placeholder="01.01.1990">
+                        <input type="text" class="form-control" id="birth" placeholder="01.01.1990" name="date">
                     </div>
                     <div class="form-group w-sm-100 w-mb-50 w-lg-25 w-xl-25 mx-5">
                         <label for="phone">Номер телефона</label>
-                        <input type="text" class="form-control" id="phone" placeholder="89999999999">
+                        <input type="text" class="form-control" id="phone" placeholder="89999999999" name="phone">
                     </div>
                 </div>
 
@@ -75,18 +75,105 @@
                     <div class="col-lg-5 col-md-0 col-sm-0"></div>
                     <div class="col-lg-6 d-flex flex-column w-lg-50 w-md-75 w-sm-100 ">
                         <div class="small_buttons d-flex flex-column flex-lg-row flex-xl-row">
-                            <button type="button" class="col-12 col-lg-6 col-xl-6 btn btn-dark mr-1 mb-3 mb-lg-0 mb-xl-0">Сохранить</button>
-                            <button type="button" class="col-12 col-lg-6 col-xl-6 btn btn-dark">Редактировать</button>
+                            <input type="submit" class="btn btn-dark col-12 col-lg-6 col-xl-6 mr-1 mb-3 mb-lg-0 mb-xl-0" name="save" value="Сохранить">
+                            <input type="submit" class="btn btn-dark col-12 col-lg-6 col-xl-6" value="Реадктировать" name="edit">
                         </div>
-                        <button type="button" class="btn btn-pink my-3 w-100">Удалить свои данные из клиентской базы</button>
-                        <button type="button" class="btn btn-blue w-100">Показать клиентскую базу</button>
+                        <input type="submit" class="btn btn-pink my-3 w-100" value="Удалить свои данные из клиентской базы" name="delete">
+                        <input type="submit" class="btn btn-blue w-100" value="Показать клиентскую базу" name="show">
                     </div>
                     <div class="col-lg-1 col-md-0 col-sm-0"></div>  
                 </div>  
 
             </form>
     </div>
+
+    <?php
+        // echo $_POST['name'];
+        // echo $_POST['surname'];
+        // echo $_POST['parname'];
+        // echo $_POST['email'];
+        // echo $_POST['date'];
+        // echo $_POST['phone'];
+
+        function printResult($result_set) {
+            while (($row  =  $result_set->fetch_assoc()) !=false) {
+                // print_r($row);
+                // echo($row['name']);
+                // echo("<br>");
     
+                echo('<tr>
+                        <td>'.$row['sur_name'].'</td>
+                        <td>'.$row['name'].'</td>
+                        <td>'.$row['par_name'].'</td>
+                        <td>'.$row['email'].'</td>
+                        <td>'.$row['birthday'].'</td>
+                        <td>'.$row['phone'].'</td> 
+                    </tr>');
+                
+            }
+        }
+
+        // если были переданы данные для добавления в БД
+        if( isset($_POST['save']) && $_POST['save']== 'Сохранить')
+        {
+            $mysqli = mysqli_connect('std-mysql', 'std_938', 'qazwsxedc', 'std_938');
+            if( mysqli_connect_errno() ) // проверяем корректность подключения
+              return 'Ошибка подключения к БД: '.mysqli_connect_error();
+
+            // формируем и выполняем SQL-запрос для добавления записи
+            // INSERT INTO `clients` (`id_client`, `sur_name`, `name`, `par_name`, `birthday`, `gender`, `email`, `phone`) VALUES (NULL, 'Иванов', 'Иван', 'Иванович', '01.01.1900', 'male', 'ivan@mail.ru', '89999999999')
+            $sql_res = $mysqli->query ("INSERT INTO `clients` (`surname`, `name`, `par_name`, `birthday`, `e-mail`, `phone`) VALUES ('{$surname}', '{$name}', '{$parname}', '$email, '{$date}', '{$phone}')");
+            // если при выполнении запроса произошла ошибка – выводим сообщение
+            if( mysqli_errno($mysqli) )
+            echo '<div class="alert alert-danger mt-5">Запись не добавлена</div>';
+            else // если все прошло нормально – выводим сообщение
+            echo '<div class="alert alert-success mt-5">Запись добавлена</div>';
+
+            $mysqli->close ();
+        } 
+
+        // $mysqli = mysqli_connect('std-mysql', 'std_938', 'qazwsxedc', 'std_938');
+        //       if( mysqli_connect_errno() ) // проверяем корректность подключения
+        //       return 'Ошибка подключения к БД: '.mysqli_connect_error();
+
+        //       $mysqli->query ("SET NAMES 'utf8'");
+
+        // $success = $mysqli->query ("INSERT INTO `clients` (`surname`, `name`, `par_name`, `birthday`, `e-mail`, `phone`) VALUES ('фамилия', 'имя', 'отчество', 'емайл', 'дата рождения', '89999999999');");
+        // echo $success;
+
+        // $mysqli->close ();
+
+        if( isset($_POST['show']) && $_POST['show']== 'Показать клиентскую базу')
+        {
+            $mysqli = mysqli_connect('std-mysql', 'std_938', 'qazwsxedc', 'std_938');
+            if( mysqli_connect_errno() ) // проверяем корректность подключения
+              return 'Ошибка подключения к БД: '.mysqli_connect_error();
+
+              $result_set = $mysqli->query("SELECT * FROM `clients`");
+              echo("<table class='table table-bordered mt-5'>
+                    <thead>
+                        <tr>
+                            <th>Фамилия</th>
+                            <th>Имя</th>
+                            <th>Отчество</th>
+                            <th>E-mail</th>
+                            <th>Дата рождения</th>
+                            <th>Телефон</th>
+                        </tr>
+                    </thead>
+                    <tbody>");
+              printResult($result_set);
+              echo("</tbody></table>");
+
+            if( mysqli_errno($mysqli) )
+            echo '<div class="alert alert-danger mt-5">Произошла ошибка</div>';
+
+            $mysqli->close ();
+        } 
+
+    ?>
+    
+
 
 
 </div>
