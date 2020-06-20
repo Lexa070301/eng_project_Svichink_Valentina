@@ -23,9 +23,8 @@
       <li class="nav-item d-flex">
         <a class="nav-link text-light" href="http://php.std-938.ist.mospolytech.ru/php_labs/savlas.ru/">Главная</a>
         <a class="nav-link text-light" href="http://php.std-938.ist.mospolytech.ru/php_labs/savlas.ru/index2.php">Наша продукция</a>
-        <a class="nav-link text-light" href="http://php.std-938.ist.mospolytech.ru/php_labs/savlas.ru/savlas_test_base.php">Test</a>
-        <a class="nav-link text-light" href="#">Продукция других брендов</a>
-        <a class="nav-link text-light" href="#">Личный кабинет</a>
+        <a class="nav-link text-light" href="http://php.std-938.ist.mospolytech.ru/php_labs/savlas.ru/index3.php">Продукция других брендов</a>
+        <a class="nav-link text-light" href="http://php.std-938.ist.mospolytech.ru/php_labs/savlas.ru/index4.php">Личный кабинет</a>
       </li>
     </ul>
   </div>
@@ -43,55 +42,51 @@
     </div>
 
     <div class="row">
-        <div class="col-12 col-lg-6 col-xl-6">
-            <form>
-            <div class="form-group">
-                <label for="name">Введите имя</label>
-                <input type="text" class="form-control w-75" id="name" placeholder="Имя">
-            </div>
-            <div class="form-group">
-                <label for="surname">Введите фамилию</label>
-                <input type="text" class="form-control w-75" id="surname" placeholder="Фамилия">
-            </div>
-            <div class="form-group">
-                <label for="parname">Введите отчество</label>
-                <input type="text" class="form-control w-75" id="parname" placeholder="Отчество">
-            </div>
-            </form>
-        </div>
+            <form class="w-100">
+                <div class="container-fluid  d-flex flex-wrap flex-row">
+                    <div class="form-group w-sm-100 w-mb-50 w-lg-25 w-xl-25 mx-5">
+                        <label for="name">Имя</label>
+                        <input type="text" class="form-control" id="name" placeholder="Имя">
+                    </div>
+                    <div class="form-group w-sm-100 w-mb-50 w-lg-25 w-xl-25 mx-5">
+                        <label for="surname">Фамилия</label>
+                        <input type="text" class="form-control" id="surname" placeholder="Фамилия">
+                    </div>
+                    <div class="form-group w-sm-100 w-mb-50 w-lg-25 w-xl-25 mx-5">
+                        <label for="parname">Отчество</label>
+                        <input type="text" class="form-control" id="parname" placeholder="Отчество">
+                    </div>
 
-        <div class="col-12 col-lg-6 col-xl-6 mt-3">
-            <form>
-            <div class="form-group">
-                <label for="email">Введите e-mail</label>
-                <input type="email" class="form-control w-75" id="email" placeholder="E-mail">
-            </div>
-            <div class="form-group">
-                <label for="birth">Введите дату Вашего рождения</label>
-                <input type="text" class="form-control w-75" id="birth" placeholder="01.01.1990">
-            </div>
-            <div class="form-group">
-                <label for="phone">Введите номер телефона</label>
-                <input type="text" class="form-control w-75" id="phone" placeholder="89999999999">
-            </div>
+                    <div class="form-group w-sm-100 w-mb-50 w-lg-25 w-xl-25 mx-5">
+                        <label for="email">E-mail</label>
+                        <input type="email" class="form-control" id="email" placeholder="E-mail">
+                    </div>
+                    <div class="form-group w-sm-100 w-mb-50 w-lg-25 w-xl-25 mx-5">
+                        <label for="birth">Дата рождения</label>
+                        <input type="text" class="form-control" id="birth" placeholder="01.01.1990">
+                    </div>
+                    <div class="form-group w-sm-100 w-mb-50 w-lg-25 w-xl-25 mx-5">
+                        <label for="phone">Номер телефона</label>
+                        <input type="text" class="form-control" id="phone" placeholder="89999999999">
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-lg-5 col-md-0 col-sm-0"></div>
+                    <div class="col-lg-6 d-flex flex-column w-lg-50 w-md-75 w-sm-100 ">
+                        <div class="small_buttons d-flex flex-column flex-lg-row flex-xl-row">
+                            <button type="button" class="col-12 col-lg-6 col-xl-6 btn btn-dark mr-1 mb-3 mb-lg-0 mb-xl-0">Сохранить</button>
+                            <button type="button" class="col-12 col-lg-6 col-xl-6 btn btn-dark">Редактировать</button>
+                        </div>
+                        <button type="button" class="btn btn-pink my-3 w-100">Удалить свои данные из клиентской базы</button>
+                        <button type="button" class="btn btn-blue w-100">Показать клиентскую базу</button>
+                    </div>
+                    <div class="col-lg-1 col-md-0 col-sm-0"></div>  
+                </div>  
+
             </form>
-        </div>
     </div>
     
-
-    <div class="row mt-3">
-    <div class="col-lg-5 col-md-0 col-sm-0"></div>
-        <div class="col-lg-6 d-flex flex-column w-lg-50 w-md-75 w-sm-100 ">
-            <div class="small_buttons d-flex flex-column flex-lg-row flex-xl-row">
-                <button type="button" class="col-12 col-lg-6 col-xl-6 btn btn-dark mr-1 mb-3 mb-lg-0 mb-xl-0">Сохранить</button>
-                <button type="button" class="col-12 col-lg-6 col-xl-6 btn btn-dark">Редактировать</button>
-            </div>
-            <button type="button" class="btn btn-pink my-3 w-100">Удалить свои данные из клиентской базы</button>
-            <button type="button" class="btn btn-blue w-100">Показать клиентскую базу</button>
-        </div>
-        <div class="col-lg-1 col-md-0 col-sm-0"></div>    
-    </div>
-</div>
 
 
 </div>

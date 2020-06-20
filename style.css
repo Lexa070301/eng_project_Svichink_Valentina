@@ -50,3 +50,17 @@ main{
 .img-about{
     z-index: 10;
 }
+
+.btn-pink{
+    background-color: #A16771;
+    color: white;
+}
+
+.btn-blue{
+    background-color: #96ACBA;
+    color: white;
+}
+
+.form-group input{
+    min-width: 220px;
+}
