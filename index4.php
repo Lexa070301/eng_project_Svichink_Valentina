@@ -63,7 +63,7 @@
                     </div>
                     <div class="form-group w-sm-100 w-mb-50 w-lg-25 w-xl-25 mx-5">
                         <label for="birth">Дата рождения</label>
-                        <input type="text" class="form-control" id="birth" placeholder="01.01.1990" name="bdate">
+                        <input type="text" class="form-control" id="birth" placeholder="гггг-мм-дд" name="bdate">
                     </div>
                     <div class="form-group w-sm-100 w-mb-50 w-lg-25 w-xl-25 mx-5">
                         <label for="phone">Номер телефона</label>
@@ -80,28 +80,66 @@
                     <div class="col-lg-6 d-flex flex-column w-lg-50 w-md-75 w-sm-100 ">
                         <div class="small_buttons d-flex flex-column flex-lg-row flex-xl-row">
                             <input type="submit" class="btn btn-dark col-12 col-lg-6 col-xl-6 mr-1 mb-3 mb-lg-0 mb-xl-0" name="save" value="Сохранить">
-                            <input type="submit" class="btn btn-dark col-12 col-lg-6 col-xl-6" value="Реадктировать" name="edit">
+                            <input type="submit" class="btn btn-dark col-12 col-lg-6 col-xl-6" value="Редактировать" name="ed">
                         </div>
-                        <input type="submit" class="btn btn-pink my-3 w-100" value="Удалить свои данные из клиентской базы" name="delete">
+                        <input type="button" class="btn btn-pink my-3 w-100" value="Удалить свои данные из клиентской базы" name="del"  data-toggle="modal" data-target="#Modal3">
                         <input type="submit" class="btn btn-blue w-100" value="Показать клиентскую базу" name="show">
                     </div>
                     <div class="col-lg-1 col-md-0 col-sm-0"></div>  
                 </div>  
 
+                <!-- Modal -->
+                <div class="modal fade" id="Modal3" tabindex="-1" role="dialog" aria-labelledby="exampleModal3Label" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModal3Label">Выберете номер строки</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                    <div class="form-group">
+                        <label for="id">Номер строки</label>
+                        <input type="text" class="form-control" id="id" name="id">
+                    </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" class="btn btn-danger" name="delete" value="Удалить">
+                    </div>
+                    </div>
+                </div>
+                </div>
+
             </form>
     </div>
+
+
 
     <?php
 
         
-    $mysqli = mysqli_connect('std-mysql', 'std_938', 'qazwsxedc', 'std_938');
-    if( mysqli_connect_errno() ) 
-    return 'Ошибка подключения к БД: '.mysqli_connect_error();
+        $mysqli = mysqli_connect('std-mysql', 'std_938', 'qazwsxedc', 'std_938');
+        if( mysqli_connect_errno() ) 
+        return 'Ошибка подключения к БД: '.mysqli_connect_error();
+
+        // Кнопка добавления клиента в БД
+        if( isset($_POST['save']) && $_POST['save']== 'Сохранить')
+        {
+            $sql_res = $mysqli->query ("INSERT INTO `clients` (`id_client`, `sur_name`, `name`, `par_name`, `birthday`, `gender`, `email`, `phone`) VALUES (NULL, '{$_POST['surname']}', '{$_POST['mname']}', '{$_POST['parname']}', '{$_POST['bdate']}', '{$_POST['gender']}', '{$_POST['email']}', '{$_POST['phone']}')");
+            
+            if( mysqli_errno($mysqli) )
+            echo '<div class="alert alert-danger mt-5">Запись не добавлена</div>';
+            else 
+            echo '<div class="alert alert-success mt-5">Запись добавлена</div>';
+
+        } 
 
 
         function printResult($result_set) {
             while (($row  =  $result_set->fetch_assoc()) !=false) {
                 echo('<tr>
+                        <td>'.$row['id_client'].'</td>
                         <td>'.$row['sur_name'].'</td>
                         <td>'.$row['name'].'</td>
                         <td>'.$row['par_name'].'</td>
@@ -112,55 +150,47 @@
                 
             }
         }
-
-        // Кнопка добавления клиента в БД
-        if( isset($_POST['save']) && $_POST['save']== 'Сохранить')
+        
+        // Кнопка показа клиентской базы данных
+        if( isset($_POST['show']) && $_POST['show']== 'Показать клиентскую базу')
         {
-            $sql_res = $mysqli->query ("INSERT INTO `clients` (`id_client`, `sur_name`, `name`, `par_name`, `birthday`, `gender`, `email`, `phone`) VALUES (NULL, '{$_POST['surname']}', '{$_POST['mname']}', '{$_POST['parname']}', '{$_POST['bdate']}', '{$_POST['gender']}', '{$_POST['email']}', '{$_POST['phone']}');");
-            
+            $p++;
+            if($p==1)
+            {
+              $result_set = $mysqli->query("SELECT * FROM `clients`");
+              echo("<div class='table-responsive'><table class='table table-bordered mt-5'>
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Фамилия</th>
+                            <th>Имя</th>
+                            <th>Отчество</th>
+                            <th>E-mail</th>
+                            <th>Дата рождения</th>
+                            <th>Телефон</th>
+                        </tr>
+                    </thead>
+                    <tbody>");
+              printResult($result_set);
+              echo("</tbody></table></div>");
+              echo("<form action='index4.php' method='post'><input type='submit' class='btn btn-secondary' name='close' value='Скрыть'></form>");
+
             if( mysqli_errno($mysqli) )
-            echo '<div class="alert alert-danger mt-5">Запись не добавлена</div>';
-            else 
-            echo '<div class="alert alert-success mt-5">Запись добавлена</div>';
+            echo '<div class="alert alert-danger mt-5">Произошла ошибка</div>';
 
-        } 
+            } 
+        }
 
-         // Кнопка показа клиентской базы данных
-         if( isset($_POST['show']) && $_POST['show']== 'Показать клиентскую базу')
-         {
-             $p++;
-             if($p==1)
-             {
-               $result_set = $mysqli->query("SELECT * FROM `clients`");
-               echo("<div class='table-responsive'><table class='table table-bordered mt-5'>
-                     <thead>
-                         <tr>
-                             <th>№</th>
-                             <th>Фамилия</th>
-                             <th>Имя</th>
-                             <th>Отчество</th>
-                             <th>E-mail</th>
-                             <th>Дата рождения</th>
-                             <th>Телефон</th>
-                         </tr>
-                     </thead>
-                     <tbody>");
-               printResult($result_set);
-               echo("</tbody></table></div>");
-               echo("<form action='index4.php' method='post'><input type='submit' class='btn btn-secondary' name='close' value='Скрыть'></form>");
- 
-             if( mysqli_errno($mysqli) )
-             echo '<div class="alert alert-danger mt-5">Произошла ошибка</div>';
- 
-             } 
-         }
- 
-         if( isset($_POST['close']) && $_POST['close']== 'Скрыть'){
-             $p = 0;
-         }
+        if( isset($_POST['close']) && $_POST['close']== 'Скрыть'){
+            $p = 0;
+        }
 
+        if( isset($_POST['delete']) && $_POST['delete']== 'Удалить'){
+        $mysqli->query("DELETE FROM `clients` WHERE `clients`.`id_client` = {$_POST['id']}");
+        }
 
-         $mysqli->close ();
+       
+        $mysqli->close ();
     ?>
     
 
