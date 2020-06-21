@@ -80,35 +80,80 @@
                     <div class="col-lg-6 d-flex flex-column w-lg-50 w-md-75 w-sm-100 ">
                         <div class="small_buttons d-flex flex-column flex-lg-row flex-xl-row">
                             <input type="submit" class="btn btn-dark col-12 col-lg-6 col-xl-6 mr-1 mb-3 mb-lg-0 mb-xl-0" name="save" value="Сохранить">
-                            <input type="submit" class="btn btn-dark col-12 col-lg-6 col-xl-6" value="Редактировать" name="ed">
+                            <input type="button" class="btn btn-dark col-12 col-lg-6 col-xl-6" value="Редактировать" name="ed" data-toggle="modal" data-target="#editModal">
                         </div>
-                        <input type="button" class="btn btn-pink my-3 w-100" value="Удалить свои данные из клиентской базы" name="del"  data-toggle="modal" data-target="#Modal3">
+                        <input type="button" class="btn btn-pink my-3 w-100" value="Удалить свои данные из клиентской базы" name="del" data-toggle="collapse" href="#collapse" aria-expanded="false" aria-controls="collapse">
                         <input type="submit" class="btn btn-blue w-100" value="Показать клиентскую базу" name="show">
                     </div>
                     <div class="col-lg-1 col-md-0 col-sm-0"></div>  
                 </div>  
 
-                <!-- Modal -->
-                <div class="modal fade" id="Modal3" tabindex="-1" role="dialog" aria-labelledby="exampleModal3Label" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModal3Label">Выберете номер строки</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                    <div class="form-group">
+                <!-- CARD FOR DELETE -->
+                <div class="collapse mt-3" id="collapse">
+                    <div class="card card-body">
                         <label for="id">Номер строки</label>
                         <input type="text" class="form-control" id="id" name="id">
-                    </div>
-                    </div>
-                    <div class="modal-footer">
-                        <input type="submit" class="btn btn-danger" name="delete" value="Удалить">
-                    </div>
+                        <input type="submit" class="btn btn-danger mt-3" name="delete" value="Удалить">
                     </div>
                 </div>
+
+                <!-- Modal edit-->
+                <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal3Label" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModal3Label">Редактирование</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            
+
+
+                        <div class="form-group w-sm-100 w-mb-50 w-lg-25 w-xl-25 mx-5">
+                            <label for="id2">Номер строки *</label>
+                            <input type="text" class="form-control" id="id2" placeholder="Номер строки" name="id2">
+                        </div>
+                        <div class="form-group w-sm-100 w-mb-50 w-lg-25 w-xl-25 mx-5">
+                            <label for="name2">Имя</label>
+                            <input type="text" class="form-control" id="name2" placeholder="Имя" name="mname2">
+                        </div>
+                        <div class="form-group w-sm-100 w-mb-50 w-lg-25 w-xl-25 mx-5">
+                            <label for="surname2">Фамилия</label>
+                            <input type="text" class="form-control" id="surname2" placeholder="Фамилия" name="surname2">
+                        </div>
+                        <div class="form-group w-sm-100 w-mb-50 w-lg-25 w-xl-25 mx-5">
+                            <label for="parname2">Отчество</label>
+                            <input type="text" class="form-control" id="parname2" placeholder="Отчество" name="parname2">
+                        </div>
+
+                        <div class="form-group w-sm-100 w-mb-50 w-lg-25 w-xl-25 mx-5">
+                            <label for="email2">E-mail</label>
+                            <input type="email" class="form-control" id="email2" placeholder="E-mail" name="email2">
+                        </div>
+                        <div class="form-group w-sm-100 w-mb-50 w-lg-25 w-xl-25 mx-5">
+                            <label for="bdate2">Дата рождения</label>
+                            <input type="text" class="form-control" id="bdate2" placeholder="гггг-мм-дд" name="bdate2">
+                        </div>
+                        <div class="form-group w-sm-100 w-mb-50 w-lg-25 w-xl-25 mx-5">
+                            <label for="phone2">Номер телефона</label>
+                            <input type="text" class="form-control" id="phone2" placeholder="89999999999" name="phone2">
+                        </div>
+                        <div class="form-group w-sm-100 w-mb-50 w-lg-25 w-xl-25 mx-5">
+                            <label for="gender2">Пол</label>
+                            <input type="text" class="form-control" id="gender2" placeholder="male/female" name="gender2">
+                        </div>
+                        <p>* - обязательно для заполнения</p>
+                        
+                        
+
+                        </div>
+                        <div class="modal-footer">
+                        <input type="submit" class="btn btn-info" name="edit" value="Сохранить изменения">
+                        </div>
+                        </div>
+                    </div>
                 </div>
 
             </form>
@@ -158,7 +203,7 @@
             if($p==1)
             {
               $result_set = $mysqli->query("SELECT * FROM `clients`");
-              echo("<div class='table-responsive'><table class='table table-bordered mt-5'>
+              echo("<div class='table-responsive'><table class='table table-bordered mt-5 bg-white'>
                     <thead>
                         <tr>
                             <th>№</th>
@@ -181,12 +226,55 @@
             } 
         }
 
+
+        // закрытие таблицы с БД
         if( isset($_POST['close']) && $_POST['close']== 'Скрыть'){
             $p = 0;
         }
 
+        // удаление строки из БД
         if( isset($_POST['delete']) && $_POST['delete']== 'Удалить'){
         $mysqli->query("DELETE FROM `clients` WHERE `clients`.`id_client` = {$_POST['id']}");
+
+        if( mysqli_errno($mysqli) )
+            echo '<div class="alert alert-secondary mt-5">Произошла ошибка</div>';
+            else 
+            echo '<div class="alert alert-danger mt-5">Запись удалена</div>';
+        
+        }
+
+        // редактирование
+        if( isset($_POST['edit']) && $_POST['edit']== 'Сохранить изменения'){
+            if($_POST['surname2'] !== ''){
+                $mysqli->query("UPDATE `clients` SET `sur_name` = '{$_POST['surname2']}' WHERE `clients`.`id_client` = {$_POST['id2']}");
+            }
+
+            if($_POST['mname2'] !== ''){
+                $mysqli->query("UPDATE `clients` SET `name` = '{$_POST['mname2']}' WHERE `clients`.`id_client` = {$_POST['id2']}");
+            }
+
+            if($_POST['parname2'] !== ''){
+                $mysqli->query("UPDATE `clients` SET `par_name` = '{$_POST['parname2']}' WHERE `clients`.`id_client` = {$_POST['id2']}");
+            }
+
+            if($_POST['email2'] !== ''){
+                $mysqli->query("UPDATE `clients` SET `email` = '{$_POST['email2']}' WHERE `clients`.`id_client` = {$_POST['id2']}");
+            }
+            if($_POST['bdate2'] !== ''){
+                $mysqli->query("UPDATE `clients` SET `birthday` = '{$_POST['bdate2']}' WHERE `clients`.`id_client` = {$_POST['id2']};");
+            }
+            if($_POST['phone2'] !== ''){
+                $mysqli->query("UPDATE `clients` SET `phone` = '{$_POST['phone2']}' WHERE `clients`.`id_client` = {$_POST['id2']}");
+            }
+            if($_POST['gender2'] !== ''){
+                $mysqli->query("UPDATE `clients` SET `gender` = '{$_POST['gender2']}' WHERE `clients`.`id_client` = {$_POST['id2']}");
+            }
+
+            if( mysqli_errno($mysqli) )
+            echo '<div class="alert alert-secondary mt-5">Произошла ошибка</div>';
+            else 
+            echo '<div class="alert alert-success mt-5">Запись отредактирована</div>';
+             
         }
 
        
