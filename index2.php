@@ -142,7 +142,7 @@
 
     </div>
 
-    
+
 <!-- MODAL -->
 <div class="modal" id="exampleModalCentered" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenteredLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">

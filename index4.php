@@ -88,19 +88,8 @@
     </div>
 
     <?php
-        // echo $_POST['name'];
-        // echo $_POST['surname'];
-        // echo $_POST['parname'];
-        // echo $_POST['email'];
-        // echo $_POST['date'];
-        // echo $_POST['phone'];
-
         function printResult($result_set) {
             while (($row  =  $result_set->fetch_assoc()) !=false) {
-                // print_r($row);
-                // echo($row['name']);
-                // echo("<br>");
-    
                 echo('<tr>
                         <td>'.$row['sur_name'].'</td>
                         <td>'.$row['name'].'</td>
@@ -113,36 +102,24 @@
             }
         }
 
-        // если были переданы данные для добавления в БД
+        // Кнопка добавления клиента в БД
         if( isset($_POST['save']) && $_POST['save']== 'Сохранить')
         {
             $mysqli = mysqli_connect('std-mysql', 'std_938', 'qazwsxedc', 'std_938');
-            if( mysqli_connect_errno() ) // проверяем корректность подключения
+            if( mysqli_connect_errno() ) 
               return 'Ошибка подключения к БД: '.mysqli_connect_error();
 
-            // формируем и выполняем SQL-запрос для добавления записи
-            // INSERT INTO `clients` (`id_client`, `sur_name`, `name`, `par_name`, `birthday`, `gender`, `email`, `phone`) VALUES (NULL, 'Иванов', 'Иван', 'Иванович', '01.01.1900', 'male', 'ivan@mail.ru', '89999999999')
-            $sql_res = $mysqli->query ("INSERT INTO `clients` (`surname`, `name`, `par_name`, `birthday`, `e-mail`, `phone`) VALUES ('{$surname}', '{$name}', '{$parname}', '$email, '{$date}', '{$phone}')");
-            // если при выполнении запроса произошла ошибка – выводим сообщение
+            $sql_res = $mysqli->query ("INSERT INTO `clients` (`id_client`, `sur_name`, `name`, `par_name`, `birthday`, `gender`, `email`, `phone`) VALUES (NULL, '{$_POST['surname']}', '{$_POST['mname']}', '{$_POST['parname']}', '{$_POST['bdate']}', '', '{$_POST['email']}', '{$_POST['phone']}')");
+            
             if( mysqli_errno($mysqli) )
             echo '<div class="alert alert-danger mt-5">Запись не добавлена</div>';
-            else // если все прошло нормально – выводим сообщение
+            else 
             echo '<div class="alert alert-success mt-5">Запись добавлена</div>';
 
             $mysqli->close ();
         } 
 
-        // $mysqli = mysqli_connect('std-mysql', 'std_938', 'qazwsxedc', 'std_938');
-        //       if( mysqli_connect_errno() ) // проверяем корректность подключения
-        //       return 'Ошибка подключения к БД: '.mysqli_connect_error();
-
-        //       $mysqli->query ("SET NAMES 'utf8'");
-
-        // $success = $mysqli->query ("INSERT INTO `clients` (`surname`, `name`, `par_name`, `birthday`, `e-mail`, `phone`) VALUES ('фамилия', 'имя', 'отчество', 'емайл', 'дата рождения', '89999999999');");
-        // echo $success;
-
-        // $mysqli->close ();
-
+        // Кнопка показа клиентской базы данных
         if( isset($_POST['show']) && $_POST['show']== 'Показать клиентскую базу')
         {
             $mysqli = mysqli_connect('std-mysql', 'std_938', 'qazwsxedc', 'std_938');
@@ -150,7 +127,7 @@
               return 'Ошибка подключения к БД: '.mysqli_connect_error();
 
               $result_set = $mysqli->query("SELECT * FROM `clients`");
-              echo("<table class='table table-bordered mt-5'>
+              echo("<div class='table-responsive'><table class='table table-bordered mt-5'>
                     <thead>
                         <tr>
                             <th>Фамилия</th>
@@ -163,7 +140,8 @@
                     </thead>
                     <tbody>");
               printResult($result_set);
-              echo("</tbody></table>");
+              echo("</tbody></table></div>");
+              echo("");
 
             if( mysqli_errno($mysqli) )
             echo '<div class="alert alert-danger mt-5">Произошла ошибка</div>';
