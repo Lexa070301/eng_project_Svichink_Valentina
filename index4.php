@@ -122,6 +122,9 @@
         // Кнопка показа клиентской базы данных
         if( isset($_POST['show']) && $_POST['show']== 'Показать клиентскую базу')
         {
+            $p++;
+            if($p==1)
+            {
             $mysqli = mysqli_connect('std-mysql', 'std_938', 'qazwsxedc', 'std_938');
             if( mysqli_connect_errno() ) // проверяем корректность подключения
               return 'Ошибка подключения к БД: '.mysqli_connect_error();
@@ -141,13 +144,19 @@
                     <tbody>");
               printResult($result_set);
               echo("</tbody></table></div>");
-              echo("");
+              echo("<form action='index4.php' method='post'><input type='submit' class='btn btn-secondary' name='close' value='Скрыть'></form>");
 
             if( mysqli_errno($mysqli) )
             echo '<div class="alert alert-danger mt-5">Произошла ошибка</div>';
 
             $mysqli->close ();
-        } 
+            } 
+        }
+
+        if( isset($_POST['close']) && $_POST['close']== 'Скрыть'){
+            $p = 0;
+        }
+
 
     ?>
     
