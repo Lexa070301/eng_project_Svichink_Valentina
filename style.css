@@ -50,3 +50,71 @@ main{
 .img-about{
     z-index: 10;
 }
+
+.btn-pink{
+    background-color: #A16771;
+    color: white;
+}
+
+.btn-blue{
+    background-color: #96ACBA;
+    color: white;
+}
+
+.form-group input{
+    min-width: 220px;
+}
+
+@media (min-width: 100px) { 
+    #logo{
+        width: 15%;
+    }
+
+    .card-small{
+        width: 30% !important;
+        font-size: 0.8rem !important;
+    }
+
+    .card-small h6{
+        font-size: 0.8rem !important;
+    }
+ }
+
+ @media (min-width: 576px) { 
+    #logo{
+        width: 15%;
+    }
+    .card-small{
+        width: 30% !important;
+        font-size: 0.8rem !important;
+    }
+    .card-small h6{
+        font-size: 0.8rem !important;
+    }
+ } 
+
+@media (min-width: 768px) { 
+    #logo{
+        width: 10%;
+    }
+    
+    .card-small{
+        width: 25% !important;
+        font-size: 1rem !important;
+    }
+    .card-small h6{
+        font-size: 1rem !important;
+    }
+ }
+
+@media (min-width: 992px) { 
+    #logo{
+        width: 6%;
+    }
+ }
+
+@media (min-width: 1200px) { 
+    #logo{
+        width: 6%;
+    }
+ }

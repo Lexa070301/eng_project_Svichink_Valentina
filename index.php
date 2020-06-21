@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    
 
     <title>savlas</title>
   </head>
@@ -20,8 +21,8 @@
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-      <li class="nav-item d-flex">
-      <a class="nav-link text-light" href="http://savlas.std-938.ist.mospolytech.ru/">Главная</a>
+    <li class="nav-item d-flex flex-column flex-lg-row flex-xl-row">
+        <a class="nav-link text-light" href="http://savlas.std-938.ist.mospolytech.ru/">Главная</a>
         <a class="nav-link text-light" href="http://savlas.std-938.ist.mospolytech.ru/index2.php">Наша продукция</a>
         <a class="nav-link text-light" href="http://savlas.std-938.ist.mospolytech.ru/index3.php">Продукция других брендов</a>
         <a class="nav-link text-light" href="http://savlas.std-938.ist.mospolytech.ru/index4.php">Личный кабинет</a>
@@ -72,7 +73,7 @@
 </div>
 </div>
 
-<button type="button" class="btn btn-dark btn-lg btn-block mb-5">Смотреть продукцию от SAVLAS</button>
+<a href="http://php.std-938.ist.mospolytech.ru/php_labs/savlas.ru/index2.php" type="button" class="btn btn-dark btn-lg btn-block mb-5">Смотреть продукцию от SAVLAS</a>
 
 <div id="carouselExampleSlidesOnly" class="carousel slide">
     <div class="carousel-inner">
@@ -88,7 +89,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col d-none d-md-block d-lg-block d-xl-block">
                     <img class="img-fluid" src="img/blue_bomb.jpg">
                     <div class="card">
                         <div class="card-body">
@@ -97,7 +98,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col d-none d-lg-block d-xl-block">
                     <img class="img-fluid" src="img/bomb_flower.jpg">
                     <div class="card">
                         <div class="card-body">
@@ -106,7 +107,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col d-none d-lg-block d-xl-block">
                     <img class="img-fluid" src="img/balls.jpg">
                     <div class="card">
                         <div class="card-body">
@@ -130,7 +131,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col d-none d-md-block d-lg-block d-xl-block">
                     <img class="img-fluid" src="img/dug.jpg">
                     <div class="card">
                         <div class="card-body">
@@ -139,7 +140,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col d-none d-lg-block d-xl-block">
                     <img class="img-fluid" src="img/diamond.jpg">
                     <div class="card">
                         <div class="card-body">
@@ -148,7 +149,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col d-none d-lg-block d-xl-block">
                     <img class="img-fluid" src="img/love.jpg">
                     <div class="card">
                         <div class="card-body">
@@ -173,17 +174,19 @@
 
 <div class="container mt-5">
     <div class="row">
-        <div class="col-6 d-flex justify-content-center align-items-center">
+        <div class="col-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center align-items-center">
             <img src="img/about.jpg" class="img-fluid img-about" alt="Author of the project" width="300">
-            <div class="shadow row__pink"></div>
+            <div class="shadow row__pink d-none d-lg-block d-xl-block"></div>
         </div>
-        <div class="col-6 d-flex justify-content-center align-items-center">
-            <p class="text-center bg-white p-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus consequuntur harum veritatis suscipit atque modi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, est? Excepturi quod rem tenetur culpa veritatis dicta alias nisi rerum.</p>
+        <div class="col-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center align-items-center">
+            <p class="text-center bg-white p-5">SAVLAS может сделать кадый твой день особенным! Именно этой идеи придерживалась наша компания, когда создавала данный бренд органической, натуральной косметики. Мы хотям, чтобы каждыя девушка была счастлива, желанна и любима всегда!<br><br> Будь вместе с нами, <br> SAVLAS</p>
         </div>
     </div>
 </div>
+
+
 <br>
-<button type="button" class="btn btn-dark btn-lg btn-block my-5">Смотреть продукцию других брендов</button>
+<a href="http://php.std-938.ist.mospolytech.ru/php_labs/savlas.ru/index3.php" type="button" class="btn btn-dark btn-lg btn-block my-5">Смотреть продукцию других брендов</a>
 
 <div id="carouselExampleSlidesOnly2" class="carousel slide mb-5">
     <div class="carousel-inner">
@@ -199,7 +202,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col d-none d-md-block d-lg-block d-xl-block">
                     <img class="img-fluid" src="img/let1.jpg">
                     <div class="card">
                         <div class="card-body">
@@ -208,7 +211,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col d-none d-lg-block d-xl-block">
                     <img class="img-fluid" src="img/bb1.jpg">
                     <div class="card">
                         <div class="card-body">
@@ -217,7 +220,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col d-none d-lg-block d-xl-block">
                     <img class="img-fluid" src="img/freshtime1.jpg">
                     <div class="card">
                         <div class="card-body">
@@ -241,7 +244,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col d-none d-md-block d-lg-block d-xl-block">
                     <img class="img-fluid" src="img/let2.jpg">
                     <div class="card">
                         <div class="card-body">
@@ -250,7 +253,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col d-none d-lg-block d-xl-block">
                     <img class="img-fluid" src="img/bb2.jpg">
                     <div class="card">
                         <div class="card-body">
@@ -259,7 +262,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col d-none d-lg-block d-xl-block">
                     <img class="img-fluid" src="img/let3.jpg">
                     <div class="card">
                         <div class="card-body">
@@ -309,5 +312,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!-- <script src = 'js/main.js'></script> -->
   </body>
 </html>
