@@ -89,7 +89,6 @@
                     </div>"); 
                     
                 }
-                // print_r($row);
               }
 
               $mysqli = mysqli_connect('std-mysql', 'std_938', 'qazwsxedc', 'std_938');

@@ -20,11 +20,11 @@
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-      <li class="nav-item d-flex">
-        <a class="nav-link text-light" href="http://php.std-938.ist.mospolytech.ru/php_labs/savlas.ru/">Главная</a>
-        <a class="nav-link text-light" href="http://php.std-938.ist.mospolytech.ru/php_labs/savlas.ru/index2.php">Наша продукция</a>
-        <a class="nav-link text-light" href="http://php.std-938.ist.mospolytech.ru/php_labs/savlas.ru/index3.php">Продукция других брендов</a>
-        <a class="nav-link text-light" href="http://php.std-938.ist.mospolytech.ru/php_labs/savlas.ru/index4.php">Личный кабинет</a>
+      <li class="nav-item d-flex flex-column flex-lg-row flex-xl-row">
+        <a class="nav-link text-light" href="http://savlas.std-938.ist.mospolytech.ru/">Главная</a>
+        <a class="nav-link text-light" href="http://savlas.std-938.ist.mospolytech.ru/index2.php">Наша продукция</a>
+        <a class="nav-link text-light" href="http://savlas.std-938.ist.mospolytech.ru/index3.php">Продукция других брендов</a>
+        <a class="nav-link text-light" href="http://savlas.std-938.ist.mospolytech.ru/index4.php">Личный кабинет</a>
       </li>
     </ul>
   </div>
@@ -36,8 +36,8 @@
 <div class="main_cont">
     <div class="container-fluid">
         <div class="row mt-3">
-            <div class="col-3"></div>
-            <div class="col-9">
+        <div class="col-0 col-md-3 col-lg-3 col-xl-3"></div>
+            <div class="col-12 col-md-9 col-lg-9 col-xl-9">
             <nav class="card card-body d-flex flex-row">
                 <a href="http://php.std-938.ist.mospolytech.ru/php_labs/savlas.ru/" class="text-muted mr-1">Главная</a></li>/
                 <a href="#" class="text-dark ml-2">Продукция от других производителей</a>
@@ -46,7 +46,7 @@
         </div>
 
         <div class="row mt-3">
-        <div class="col-3">
+        <div class="col-12 col-sm-3">
 
         <table class="table table-hover">
         <tbody>
@@ -74,22 +74,21 @@
 
         </div>
 
-        <div class="col-9">
+        <div class="col-12 col-sm-9">
             <h2 class="mb-5">Каталог товаров</h2>
 
             <?php
               function printResult($result_set) {
                 while (($row  =  $result_set->fetch_assoc()) !=false) {
       
-                    echo("<div class='w-25 mx-3  mb-3 border-dark p-4 rounded shadow d-flex flex-column justify-content-center align-content-center bg-white'>
-                    <img class='img-fluid' src='img/".$row['img']."'>
+                    echo("<div class='w-25 mx-1 mx-sm-2 mx-md-3 mb-3 border-dark p-1 p-md-3 rounded shadow d-flex align-items-normal justify-content-between flex-column bg-white card-small'>
+                    <img class='img-fluid card-img' src='img/".$row['img']."'>
                     <h6 class='mt-2'>".$row['name_product']."</h6>
                     <p class='text-muted'>".$row['name_brand']."</p>
                     <button type='button' class='btn btn-dark' data-toggle='modal' data-target='#exampleModalCentered'>Купить</button>
                     </div>"); 
                     
                 }
-                // print_r($row);
               }
 
               $mysqli = mysqli_connect('std-mysql', 'std_938', 'qazwsxedc', 'std_938');
