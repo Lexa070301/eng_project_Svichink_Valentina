@@ -21,10 +21,10 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-md-0">
       <li class="nav-item d-flex">
-        <a class="nav-link text-light" href="http://php.std-938.ist.mospolytech.ru/php_labs/savlas.ru/">Главная</a>
-        <a class="nav-link text-light" href="http://php.std-938.ist.mospolytech.ru/php_labs/savlas.ru/index2.php">Наша продукция</a>
-        <a class="nav-link text-light" href="http://php.std-938.ist.mospolytech.ru/php_labs/savlas.ru/index3.php">Продукция других брендов</a>
-        <a class="nav-link text-light" href="http://php.std-938.ist.mospolytech.ru/php_labs/savlas.ru/index4.php">Личный кабинет</a>
+        <a class="nav-link text-light" href="http://savlas.std-938.ist.mospolytech.ru/">Главная</a>
+        <a class="nav-link text-light" href="http://savlas.std-938.ist.mospolytech.ru/index2.php">Наша продукция</a>
+        <a class="nav-link text-light" href="http://savlas.std-938.ist.mospolytech.ru/index3.php">Продукция других брендов</a>
+        <a class="nav-link text-light" href="http://savlas.std-938.ist.mospolytech.ru/index4.php">Личный кабинет</a>
       </li>
     </ul>
   </div>
@@ -46,7 +46,7 @@
                 <div class="container-fluid  d-flex flex-wrap flex-row">
                     <div class="form-group w-sm-100 w-mb-50 w-lg-25 w-xl-25 mx-5">
                         <label for="name">Имя</label>
-                        <input type="text" class="form-control" id="name" placeholder="Имя" name="name">
+                        <input type="text" class="form-control" id="name" placeholder="Имя" name="mname">
                     </div>
                     <div class="form-group w-sm-100 w-mb-50 w-lg-25 w-xl-25 mx-5">
                         <label for="surname">Фамилия</label>
@@ -63,11 +63,15 @@
                     </div>
                     <div class="form-group w-sm-100 w-mb-50 w-lg-25 w-xl-25 mx-5">
                         <label for="birth">Дата рождения</label>
-                        <input type="text" class="form-control" id="birth" placeholder="01.01.1990" name="date">
+                        <input type="text" class="form-control" id="birth" placeholder="01.01.1990" name="bdate">
                     </div>
                     <div class="form-group w-sm-100 w-mb-50 w-lg-25 w-xl-25 mx-5">
                         <label for="phone">Номер телефона</label>
                         <input type="text" class="form-control" id="phone" placeholder="89999999999" name="phone">
+                    </div>
+                    <div class="form-group w-sm-100 w-mb-50 w-lg-25 w-xl-25 mx-5">
+                        <label for="gender">Пол</label>
+                        <input type="text" class="form-control" id="gender" placeholder="male/female" name="gender">
                     </div>
                 </div>
 
@@ -88,6 +92,13 @@
     </div>
 
     <?php
+
+        
+    $mysqli = mysqli_connect('std-mysql', 'std_938', 'qazwsxedc', 'std_938');
+    if( mysqli_connect_errno() ) 
+    return 'Ошибка подключения к БД: '.mysqli_connect_error();
+
+
         function printResult($result_set) {
             while (($row  =  $result_set->fetch_assoc()) !=false) {
                 echo('<tr>
@@ -105,59 +116,51 @@
         // Кнопка добавления клиента в БД
         if( isset($_POST['save']) && $_POST['save']== 'Сохранить')
         {
-            $mysqli = mysqli_connect('std-mysql', 'std_938', 'qazwsxedc', 'std_938');
-            if( mysqli_connect_errno() ) 
-              return 'Ошибка подключения к БД: '.mysqli_connect_error();
-
-            $sql_res = $mysqli->query ("INSERT INTO `clients` (`id_client`, `sur_name`, `name`, `par_name`, `birthday`, `gender`, `email`, `phone`) VALUES (NULL, '{$_POST['surname']}', '{$_POST['mname']}', '{$_POST['parname']}', '{$_POST['bdate']}', '', '{$_POST['email']}', '{$_POST['phone']}')");
+            $sql_res = $mysqli->query ("INSERT INTO `clients` (`id_client`, `sur_name`, `name`, `par_name`, `birthday`, `gender`, `email`, `phone`) VALUES (NULL, '{$_POST['surname']}', '{$_POST['mname']}', '{$_POST['parname']}', '{$_POST['bdate']}', '{$_POST['gender']}', '{$_POST['email']}', '{$_POST['phone']}');");
             
             if( mysqli_errno($mysqli) )
             echo '<div class="alert alert-danger mt-5">Запись не добавлена</div>';
             else 
             echo '<div class="alert alert-success mt-5">Запись добавлена</div>';
 
-            $mysqli->close ();
         } 
 
-        // Кнопка показа клиентской базы данных
-        if( isset($_POST['show']) && $_POST['show']== 'Показать клиентскую базу')
-        {
-            $p++;
-            if($p==1)
-            {
-            $mysqli = mysqli_connect('std-mysql', 'std_938', 'qazwsxedc', 'std_938');
-            if( mysqli_connect_errno() ) // проверяем корректность подключения
-              return 'Ошибка подключения к БД: '.mysqli_connect_error();
-
-              $result_set = $mysqli->query("SELECT * FROM `clients`");
-              echo("<div class='table-responsive'><table class='table table-bordered mt-5'>
-                    <thead>
-                        <tr>
-                            <th>Фамилия</th>
-                            <th>Имя</th>
-                            <th>Отчество</th>
-                            <th>E-mail</th>
-                            <th>Дата рождения</th>
-                            <th>Телефон</th>
-                        </tr>
-                    </thead>
-                    <tbody>");
-              printResult($result_set);
-              echo("</tbody></table></div>");
-              echo("<form action='index4.php' method='post'><input type='submit' class='btn btn-secondary' name='close' value='Скрыть'></form>");
-
-            if( mysqli_errno($mysqli) )
-            echo '<div class="alert alert-danger mt-5">Произошла ошибка</div>';
-
-            $mysqli->close ();
-            } 
-        }
-
-        if( isset($_POST['close']) && $_POST['close']== 'Скрыть'){
-            $p = 0;
-        }
+         // Кнопка показа клиентской базы данных
+         if( isset($_POST['show']) && $_POST['show']== 'Показать клиентскую базу')
+         {
+             $p++;
+             if($p==1)
+             {
+               $result_set = $mysqli->query("SELECT * FROM `clients`");
+               echo("<div class='table-responsive'><table class='table table-bordered mt-5'>
+                     <thead>
+                         <tr>
+                             <th>№</th>
+                             <th>Фамилия</th>
+                             <th>Имя</th>
+                             <th>Отчество</th>
+                             <th>E-mail</th>
+                             <th>Дата рождения</th>
+                             <th>Телефон</th>
+                         </tr>
+                     </thead>
+                     <tbody>");
+               printResult($result_set);
+               echo("</tbody></table></div>");
+               echo("<form action='index4.php' method='post'><input type='submit' class='btn btn-secondary' name='close' value='Скрыть'></form>");
+ 
+             if( mysqli_errno($mysqli) )
+             echo '<div class="alert alert-danger mt-5">Произошла ошибка</div>';
+ 
+             } 
+         }
+ 
+         if( isset($_POST['close']) && $_POST['close']== 'Скрыть'){
+             $p = 0;
+         }
 
 
+         $mysqli->close ();
     ?>
     
 
