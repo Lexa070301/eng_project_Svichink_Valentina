@@ -26,7 +26,7 @@
         <a class="nav-link text-light" href="http://savlas.std-938.ist.mospolytech.ru/index2.php">Наша продукция</a>
         <a class="nav-link text-light" href="http://savlas.std-938.ist.mospolytech.ru/index3.php">Продукция других брендов</a>
         <a class="nav-link text-light" href="http://savlas.std-938.ist.mospolytech.ru/index4.php">Личный кабинет</a>
-      </li>
+        </li>
     </ul>
   </div>
 </nav>
@@ -78,6 +78,8 @@
         <div class="col-12 col-sm-9">
             <h2 class="mb-5">Каталог товаров</h2>
 
+            
+
             <?php
               function printResult($result_set) {
                 while (($row  =  $result_set->fetch_assoc()) !=false) {
@@ -86,7 +88,11 @@
                     <img class='img-fluid card-img' src='img/".$row['img']."'>
                     <h6 class='mt-2'>".$row['name_product']."</h6>
                     <p class='text-muted'>".$row['name_brand']."</p>
-                    <button type='button' class='btn btn-dark' data-toggle='modal' data-target='#exampleModalCentered'>Купить</button>
+                    <a tabindex='0' class='btn btn-dark text-white' role='button'
+                      data-toggle='popover' data-trigger='focus' title='".$row['name_product']."'
+                      data-content='".$row['description']."'>
+                      Подробнее
+                    </a>
                     </div>"); 
                     
                 }
@@ -98,33 +104,34 @@
 
               $mysqli->query ("SET NAMES 'utf8'");
 
+
               echo("<h5 id='bombs' class='mt-5'>Бомбочки для ванн</h5>");
               echo("<div class='d-flex flex-wrap'>");
-              $result_set = $mysqli->query("SELECT `product`.`name_product`, `brand`.`name_brand`, `model`.`id_model`, `product`.`img` FROM `product` JOIN `brand` ON (`product`.`id_brand` = `brand`.`id_brand`) JOIN `model` ON (`product`.`id_model` = `model`.`id_model`) WHERE `product`.`id_model` = 1 AND `product`.`id_brand` = 1");
+              $result_set = $mysqli->query("SELECT `product`.`name_product`, `brand`.`name_brand`, `model`.`id_model`, `product`.`img`, `product`.`description` FROM `product` JOIN `brand` ON (`product`.`id_brand` = `brand`.`id_brand`) JOIN `model` ON (`product`.`id_model` = `model`.`id_model`) WHERE `product`.`id_model` = 1 AND `product`.`id_brand` = 1");
               printResult($result_set);
               echo("</div>");
 
               echo("<h5 id='foam' class='mt-5'>Пена для ванн</h5>");
               echo("<div class='d-flex flex-wrap'>");
-              $result_set = $mysqli->query("SELECT `product`.`name_product`, `brand`.`name_brand`, `model`.`id_model`, `product`.`img` FROM `product` JOIN `brand` ON (`product`.`id_brand` = `brand`.`id_brand`) JOIN `model` ON (`product`.`id_model` = `model`.`id_model`) WHERE `product`.`id_model` = 2 AND `product`.`id_brand` = 1");
+              $result_set = $mysqli->query("SELECT `product`.`name_product`, `brand`.`name_brand`, `model`.`id_model`, `product`.`img`, `product`.`description` FROM `product` JOIN `brand` ON (`product`.`id_brand` = `brand`.`id_brand`) JOIN `model` ON (`product`.`id_model` = `model`.`id_model`) WHERE `product`.`id_model` = 2 AND `product`.`id_brand` = 1");
               printResult($result_set);
               echo("</div>");
 
               echo("<h5 id='scrab' class='mt-5'>Скрабы</h5>");
               echo("<div class='d-flex flex-wrap'>");
-              $result_set = $mysqli->query("SELECT `product`.`name_product`, `brand`.`name_brand`, `model`.`id_model`, `product`.`img` FROM `product` JOIN `brand` ON (`product`.`id_brand` = `brand`.`id_brand`) JOIN `model` ON (`product`.`id_model` = `model`.`id_model`) WHERE `product`.`id_model` = 3 AND `product`.`id_brand` = 1");
+              $result_set = $mysqli->query("SELECT `product`.`name_product`, `brand`.`name_brand`, `model`.`id_model`, `product`.`img`, `product`.`description` FROM `product` JOIN `brand` ON (`product`.`id_brand` = `brand`.`id_brand`) JOIN `model` ON (`product`.`id_model` = `model`.`id_model`) WHERE `product`.`id_model` = 3 AND `product`.`id_brand` = 1");
               printResult($result_set);
               echo("</div>");
 
               echo("<h5 id='pearls' class='mt-5'>Жемчуг для ванн</h5>");
               echo("<div class='d-flex flex-wrap'>");
-              $result_set = $mysqli->query("SELECT `product`.`name_product`, `brand`.`name_brand`, `model`.`id_model`, `product`.`img` FROM `product` JOIN `brand` ON (`product`.`id_brand` = `brand`.`id_brand`) JOIN `model` ON (`product`.`id_model` = `model`.`id_model`) WHERE `product`.`id_model` = 4 AND `product`.`id_brand` = 1");
+              $result_set = $mysqli->query("SELECT `product`.`name_product`, `brand`.`name_brand`, `model`.`id_model`, `product`.`img`, `product`.`description` FROM `product` JOIN `brand` ON (`product`.`id_brand` = `brand`.`id_brand`) JOIN `model` ON (`product`.`id_model` = `model`.`id_model`) WHERE `product`.`id_model` = 4 AND `product`.`id_brand` = 1");
               printResult($result_set);
               echo("</div>");
 
               echo("<h5 id='soap' class='mt-5'>Мыло</h5>");
               echo("<div class='d-flex flex-wrap'>");
-              $result_set = $mysqli->query("SELECT `product`.`name_product`, `brand`.`name_brand`, `model`.`id_model`, `product`.`img` FROM `product` JOIN `brand` ON (`product`.`id_brand` = `brand`.`id_brand`) JOIN `model` ON (`product`.`id_model` = `model`.`id_model`) WHERE `product`.`id_model` = 5 AND `product`.`id_brand` = 1");
+              $result_set = $mysqli->query("SELECT `product`.`name_product`, `brand`.`name_brand`, `model`.`id_model`, `product`.`img`, `product`.`description` FROM `product` JOIN `brand` ON (`product`.`id_brand` = `brand`.`id_brand`) JOIN `model` ON (`product`.`id_model` = `model`.`id_model`) WHERE `product`.`id_model` = 5 AND `product`.`id_brand` = 1");
               printResult($result_set);
               echo("</div>");
 
@@ -141,51 +148,6 @@
 
 
 </div>
-
-<!-- Modal -->
-<div class="modal" id="exampleModalCentered" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenteredLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenteredLabel">Заполнение формы покупки</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <form>
-      <div class="form-group">
-        <label for="amount">Количество</label>
-        <input type="text" class="form-control" id="amount" placeholder="1">
-      </div>
-      <div class="form-group">
-        <label for="sur_name">Фамилия</label>
-        <input type="text" class="form-control" id="sur_name">
-      </div>
-      <div class="form-group">
-        <label for="name">Имя</label>
-        <input type="text" class="form-control" id="name">
-      </div>
-      <div class="form-group">
-        <label for="par_name">Отчество</label>
-        <input type="text" class="form-control" id="par_name">
-      </div>
-      <div class="form-group">
-        <label for="email">E-mail</label>
-        <input type="email" class="form-control" id="email">
-      </div>
-      <div class="form-group">
-        <label for="phone">Телефон</label>
-        <input type="text" class="form-control" id="phone" placeholder="89999999999">
-      </div>
-    </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-        <button type="button" class="btn btn-info" data-dismiss="modal">Купить</button>
-      </div>
-    </div>
-  </div>
 
 
 </div>
@@ -216,6 +178,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <!-- <script src = 'js/main.js'></script> -->
+    <script src = 'main.js'></script>
   </body>
 </html>
