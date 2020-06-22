@@ -77,6 +77,15 @@
 
         <div class="col-12 col-sm-9">
             <h2 class="mb-5">Каталог товаров</h2>
+            <form action="index3.php" method="post">
+            <div class="form-group">
+              <label for="search"><strong>Поиск по каталогу</strong></label>
+              <dix class="d-flex">
+                <input type="text" class="form-control" id="search" placeholder="Введите название товара" name="search">
+                <input type="submit" type="Начать поиск" class="btn btn-outline-secondary" value="Найти" name="srcBtn">
+              </dix>
+            </div>
+            </form>
 
             <?php
               function printResult($result_set) {
@@ -101,6 +110,21 @@
               return 'Ошибка подключения к БД: '.mysqli_connect_error();
 
               $mysqli->query ("SET NAMES 'utf8'");
+
+
+              // поиск
+              if( isset($_POST['srcBtn']) && $_POST['srcBtn']== 'Найти')
+              {
+                echo("<div class='d-flex flex-wrap'>");
+                $result_set = $mysqli->query("SELECT * FROM `product` WHERE `name_product` LIKE '%".$_POST['search']."%'");
+                printResult($result_set);
+                echo("</div>");
+      
+                  if( mysqli_errno($mysqli) )
+                  echo '<div class="alert alert-danger mt-5">Произошла ошибка</div>';
+              }
+
+
 
               echo("<h5 id='letique' class='mt-5'>LETIQUE</h5>");
               echo("<div class='d-flex flex-wrap'>");
