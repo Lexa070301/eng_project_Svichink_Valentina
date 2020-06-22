@@ -19,6 +19,12 @@ main {
   display: flex !important;
   justify-content: center !important; }
 
+.carousel-item img {
+    width: 90%; }
+
+.carousel-item .card {
+    width: 90% !important;}  
+
 .row__pink {
   width: 50%;
   height: 100%;
