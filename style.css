@@ -1,155 +1,102 @@
-*{
-    font-family: 'Montserrat', sans-serif !important;
-}
+html, body {
+  font-family: 'Montserrat', sans-serif !important; }
 
-#logo{
-    width: 6%;
-}
+#logo {
+  width: 6%; }
 
-main{
-    margin: 0 !important;
-    padding: 0 !important;
-}
+main {
+  margin: 0 !important;
+  padding: 0 !important; }
 
-.card_img{
-    height: 500px !important;
-}
+.card_img {
+  height: 500px !important; }
 
-#video{
-    width: 100%;
-}
+.main_cont {
+  background-image: url(img/fon_flowers.png);
+  height: auto; }
 
-.main_cont{
-    background-image: url(img/fon_flowers.png);
-    height: 1000px;
-}
+.carousel {
+  display: flex !important;
+  justify-content: center !important; }
 
-.carousel{
-    display: flex !important;
-    justify-content: center !important;
-}
+.row__pink {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 30px;
+  left: 190px;
+  background-color: #FDECEF;
+  z-index: 1; }
 
-.carousel-item img{
-    width: 90%;
-}
+.img-about {
+  z-index: 10; }
 
-.carousel-item .card{
-    width: 90% !important;
-}
+.btn-pink {
+  background-color: #A16771;
+  color: white; }
 
-.row__pink{
-    width: 50%;
-    height: 100%;
-    position: absolute;
-    top: 30px;
-    left: 190px;
-    background-color: #FDECEF;
-    z-index: 1;
-}
+.btn-blue {
+  background-color: #96ACBA;
+  color: white; }
 
-.img-about{
-    z-index: 10;
-}
+.form-group input {
+  min-width: 220px; }
 
-.btn-pink{
-    background-color: #A16771;
-    color: white;
-}
+@media (min-width: 100px) {
+  #logo {
+    width: 15%; }
 
-.btn-blue{
-    background-color: #96ACBA;
-    color: white;
-}
+  .card-small {
+    width: 30% !important;
+    font-size: 0.8rem !important; }
+    .card-small .card-small h6 {
+      font-size: 0.6rem !important; } }
+@media (min-width: 576px) {
+  #logo {
+    width: 15%; }
 
-.form-group input{
-    min-width: 220px;
-}
+  .card-small {
+    width: 30% !important;
+    font-size: 0.8rem !important; }
+    .card-small .card-small h6 {
+      font-size: 0.6rem !important; } }
+@media (min-width: 768px) {
+  #logo {
+    width: 10%; }
 
-@media (min-width: 100px) { 
-    #logo{
-        width: 15%;
-    }
+  .card-small {
+    width: 25% !important;
+    font-size: 1rem !important; }
+    .card-small .card-small h6 {
+      font-size: 1rem !important; } }
+@media (min-width: 992px) {
+  #logo {
+    width: 6%; } }
+@media (min-width: 1200px) {
+  #logo {
+    width: 6%; } }
+@media print {
+  @page {
+    margin: 2cm; }
+  form, input {
+    display: none; }
 
-    .card-small{
-        width: 30% !important;
-        font-size: 0.8rem !important;
-    }
+  .print-none, .card-small a, .card-body a {
+    display: none; }
 
-    .card-small h6{
-        font-size: 0.6rem !important;
-    }
- }
+  a[href]:after {
+    content: " (" attr(href) ")"; }
 
- @media (min-width: 576px) { 
-    #logo{
-        width: 15%;
-    }
-    .card-small{
-        width: 30% !important;
-        font-size: 0.8rem !important;
-    }
-    .card-small h6{
-        font-size: 0.6rem !important;
-    }
- } 
+  img {
+    filter: grayscale(100%); }
 
-@media (min-width: 768px) { 
-    #logo{
-        width: 10%;
-    }
-    
-    .card-small{
-        width: 25% !important;
-        font-size: 1rem !important;
-    }
-    .card-small h6{
-        font-size: 1rem !important;
-    }
- }
+  .main_cont {
+    background: none; }
 
-@media (min-width: 992px) { 
-    #logo{
-        width: 6%;
-    }
- }
+  .card-small, h5:first-child {
+    page-break-inside: avoid; }
 
-@media (min-width: 1200px) { 
-    #logo{
-        width: 6%;
-    }
- }
+  h5 {
+    page-break-before: always; } }
 
- @media print{
-    @page {
-        margin: 2cm;
-    }
-
-    form, input{
-        display: none;
-    }
-
-    .print-none, .card-small a, .card-body a {
-        display: none;
-    }
-
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
-
-    img{
-        filter: grayscale(100%); 
-    }
-
-    .main_cont{
-        background: none;
-    }
-
-    .card-small, h5:first-child{ 
-        page-break-inside: avoid; 
-    }
-
-    h5{ 
-        page-break-before: always;
-    }
-   
-}
+/*# sourceMappingURL=style.css.map */
