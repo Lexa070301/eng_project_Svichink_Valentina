@@ -36,7 +36,7 @@
 <main>
 <div class="main_cont">
     <div class="container-fluid">
-        <div class="row mt-3">
+        <div class="row mt-3 print-none">
             <div class="col-0 col-md-3 col-lg-3 col-xl-3"></div>
             <div class="col-12 col-md-9 col-lg-9 col-xl-9">
             <nav class="card card-body d-flex flex-row">
@@ -47,7 +47,7 @@
         </div>
 
         <div class="row mt-3">
-        <div class="col-12 col-sm-3">
+        <div class="col-12 col-sm-3 print-none">
 
         <table class="table table-hover">
         <tbody>
@@ -159,7 +159,7 @@
         <div class="row bg-dark d-flex flex-column">
         <div class="d-flex  my-2">
             <img src="img/inst.svg" alt="icon instagram">
-            <a href="#" class="text-light ml-1">Instagram</a>
+            <a href="https://www.instagram.com/savlas_24/" class="text-light ml-1">Instagram</a>
         </div>
         <div class="d-flex">
           <img src="img/facebook.svg" alt="icon facebook">

@@ -118,3 +118,38 @@ main{
         width: 6%;
     }
  }
+
+ @media print{
+    @page {
+        margin: 2cm;
+    }
+
+    form, input{
+        display: none;
+    }
+
+    .print-none, .card-small a, .card-body a {
+        display: none;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    img{
+        filter: grayscale(100%); 
+    }
+
+    .main_cont{
+        background: none;
+    }
+
+    .card-small, h5:first-child{ 
+        page-break-inside: avoid; 
+    }
+
+    h5{ 
+        page-break-before: always;
+    }
+   
+}

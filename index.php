@@ -27,7 +27,7 @@
         <a class="nav-link text-light" href="http://savlas.std-938.ist.mospolytech.ru/index2.php">Наша продукция</a>
         <a class="nav-link text-light" href="http://savlas.std-938.ist.mospolytech.ru/index3.php">Продукция других брендов</a>
         <a class="nav-link text-light" href="http://savlas.std-938.ist.mospolytech.ru/index4.php">Личный кабинет</a>
-      </li>
+        </li>
     </ul>
   </div>
 </nav>
@@ -37,8 +37,8 @@
 <div class="main_cont">
 
      
-<div class="carousel my-5">
-<div id="carouselExampleIndicators" class="carousel slide w-75" data-ride="carousel">
+<div class="carousel my-5 print-none">
+<div id="carouselExampleIndicators" class="carousel slide w-75 print-none" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -46,7 +46,7 @@
     <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
   </ol>
-  <div class="carousel-inner" role="listbox">
+  <div class="carousel-inner print-none" role="listbox">
     <div class="carousel-item active">
       <img class="d-block w-100" src="img/carousel1.jpg" data-src="holder.js/900x400?theme=industrial" alt="First slide">
     </div>
@@ -63,11 +63,11 @@
       <img class="d-block w-100" src="img/carousel3.jpg" data-src="holder.js/900x400?theme=industrial" alt="Fifth slide">
     </div>
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+  <a class="carousel-control-prev print-none" href="#carouselExampleIndicators" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+  <a class="carousel-control-next print-none" href="#carouselExampleIndicators" role="button" data-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
@@ -177,7 +177,7 @@
     <div class="row">
         <div class="col-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center align-items-center">
             <img src="img/about.jpg" class="img-fluid img-about" alt="Author of the project" width="300">
-            <div class="shadow row__pink d-none d-lg-block d-xl-block"></div>
+            <div class="shadow row__pink d-none d-lg-block d-xl-block print-none"></div>
         </div>
         <div class="col-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center align-items-center">
             <p class="text-center bg-white p-5">SAVLAS может сделать кадый твой день особенным! Именно этой идеи придерживалась наша компания, когда создавала данный бренд органической, натуральной косметики. Мы хотям, чтобы каждыя девушка была счастлива, желанна и любима всегда!<br><br> Будь вместе с нами, <br> SAVLAS</p>
@@ -294,7 +294,7 @@
         <div class="row bg-dark d-flex flex-column">
         <div class="d-flex  my-2">
             <img src="img/inst.svg" alt="icon instagram">
-            <a href="#" class="text-light ml-1">Instagram</a>
+            <a href="https://www.instagram.com/savlas_24/" class="text-light ml-1">Instagram</a>
         </div>
         <div class="d-flex">
           <img src="img/facebook.svg" alt="icon facebook">

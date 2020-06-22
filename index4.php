@@ -26,7 +26,7 @@
         <a class="nav-link text-light" href="http://savlas.std-938.ist.mospolytech.ru/index2.php">Наша продукция</a>
         <a class="nav-link text-light" href="http://savlas.std-938.ist.mospolytech.ru/index3.php">Продукция других брендов</a>
         <a class="nav-link text-light" href="http://savlas.std-938.ist.mospolytech.ru/index4.php">Личный кабинет</a>
-      </li>
+        </li>
     </ul>
   </div>
 </nav>
@@ -193,8 +193,11 @@
                         <td>'.$row['birthday'].'</td>
                         <td>'.$row['phone'].'</td> 
                     </tr>');
-                
             }
+            echo("<tr>
+                    <th colspan='6'>Общее количество клиентов</th>
+                    <th>".$result_set->num_rows."</th>
+                </tr>");
         }
         
         // Кнопка показа клиентской базы данных
@@ -223,7 +226,6 @@
 
             if( mysqli_errno($mysqli) )
             echo '<div class="alert alert-danger mt-5">Произошла ошибка</div>';
-
             } 
         }
 
@@ -283,8 +285,6 @@
     ?>
     
 
-
-
 </div>
 </main>
 
@@ -294,7 +294,7 @@
         <div class="row bg-dark d-flex flex-column">
         <div class="d-flex  my-2">
             <img src="img/inst.svg" alt="icon instagram">
-            <a href="#" class="text-light ml-1">Instagram</a>
+            <a href="https://www.instagram.com/savlas_24/" class="text-light ml-1">Instagram</a>
         </div>
         <div class="d-flex">
           <img src="img/facebook.svg" alt="icon facebook">
