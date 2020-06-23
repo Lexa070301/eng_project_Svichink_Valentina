@@ -39,141 +39,138 @@
         <div class="row mt-3 print-none">
             <div class="col-0 col-md-3 col-lg-3 col-xl-3"></div>
             <div class="col-12 col-md-9 col-lg-9 col-xl-9">
-            <nav class="card card-body d-flex flex-row">
-                <a href="http://savlas.std-938.ist.mospolytech.ru/" class="text-muted mr-1">Главная</a></li>/
-                <a href="http://savlas.std-938.ist.mospolytech.ru/index2.php" class="text-dark ml-2">Продукция от SAVLAS</a>
-            </nav>
+              <nav class="card card-body d-flex flex-row">
+                  <a href="http://savlas.std-938.ist.mospolytech.ru/" class="text-muted mr-1">Главная</a>/
+                  <a href="http://savlas.std-938.ist.mospolytech.ru/index2.php" class="text-dark ml-2">Продукция от SAVLAS</a>
+              </nav>
             </div>
         </div>
 
         <div class="row mt-3">
-        <div class="col-12 col-sm-3 print-none">
+          <div class="col-12 col-sm-3 print-none">
 
-        <table class="table table-hover">
-        <tbody>
-            <tr><td>
-                <a class="text-dark"  href="#bombs">Бомбочки для ванн</a>
-            </td></tr>
+          <table class="table table-hover">
+          <tbody>
+              <tr><td>
+                  <a class="text-dark"  href="#bombs">Бомбочки для ванн</a>
+              </td></tr>
 
-            <tr><td>
-                <a class="text-dark"href="#foam">Пена для ванн</a>
-            </td></tr>
+              <tr><td>
+                  <a class="text-dark" href="#foam">Пена для ванн</a>
+              </td></tr>
 
-            <tr><td>
-                <a class="text-dark" href="#scrab">Скрабы</a>
-            </td></tr>
+              <tr><td>
+                  <a class="text-dark" href="#scrab">Скрабы</a>
+              </td></tr>
 
-            <tr><td>
-                <a class="text-dark" href="#pearls">Жемчуг для ванн</a>
-            </td></tr>
+              <tr><td>
+                  <a class="text-dark" href="#pearls">Жемчуг для ванн</a>
+              </td></tr>
 
-            <tr><td>
-                <a class="text-dark"href="#soap">Мыло</a>
-            </td></tr>
-        </tbody>
-        </table>
+              <tr><td>
+                  <a class="text-dark" href="#soap">Мыло</a>
+              </td></tr>
+          </tbody>
+          </table>
 
-        </div>
+          </div>
 
-        <div class="col-12 col-sm-9">
-            <h2 class="mb-5">Каталог товаров</h2>
-            <form action="index2.php" method="post">
-            <div class="form-group row">
-              <label for="search" class="col-12"><strong>Поиск по каталогу</strong></label>
-              <div class="row d-flex flex-wrap col-12">
-                <input type="text" class="form-control col-12 col-sm-8" id="search" placeholder="Введите название товара" name="search">
-                <input type="submit" type="Начать поиск" class="btn btn-outline-secondary col-12 col-sm-1" value="Найти" name="srcBtn">
+          <div class="col-12 col-sm-9">
+              <h2 class="mb-5">Каталог товаров</h2>
+              <form action="index2.php" method="post">
+              <div class="form-group row">
+                <label for="search" class="col-12"><strong>Поиск по каталогу</strong></label>
+                <div class="row d-flex flex-wrap col-12">
+                  <input type="text" class="form-control col-12 col-sm-8" id="search" placeholder="Введите название товара" name="search">
+                  <input type="submit" title="Начать поиск" class="btn btn-outline-secondary col-12 col-sm-1" value="Найти" name="srcBtn">
+                </div>
               </div>
-            </div>
-            </form>
+              </form>
 
-            
+              
 
-            <?php
-              function printResult($result_set) {
-                while (($row  =  $result_set->fetch_assoc()) !=false) {
-      
-                    echo("<div class='w-25 mx-1 mx-sm-2 mx-md-3 mb-3 border-dark p-1 p-md-3 rounded shadow d-flex align-items-normal justify-content-between flex-column bg-white card-small'>
-                    <img class='img-fluid card-img' src='img/".$row['img']."'>
-                    <h6 class='mt-2'>".$row['name_product']."</h6>
-                    <p class='text-muted'>".$row['name_brand']."</p>
-                    <a tabindex='0' class='btn btn-dark text-white' role='button'
-                      data-toggle='popover' data-trigger='focus' title='".$row['name_product']."'
-                      data-content='".$row['description']."'>
-                      Подробнее
-                    </a>
-                    </div>"); 
-                    
+              <?php
+                function printResult($result_set) {
+                  while (($row  =  $result_set->fetch_assoc()) !=false) {
+        
+                      echo("<div class='w-25 mx-1 mx-sm-2 mx-md-3 mb-3 border-dark p-1 p-md-3 rounded shadow d-flex align-items-normal justify-content-between flex-column bg-white card-small'>
+                      <img class='img-fluid card-img' src='img/".$row['img']."' alt='product image'>
+                      <h6 class='mt-2'>".$row['name_product']."</h6>
+                      <p class='text-muted'>".$row['name_brand']."</p>
+                      <a tabindex='0' class='btn btn-dark text-white' role='button'
+                        data-toggle='popover' data-trigger='focus' title='".$row['name_product']."'
+                        data-content='".$row['description']."'>
+                        Подробнее
+                      </a>
+                      </div>"); 
+                      
+                  }
                 }
-              }
 
-              $mysqli = mysqli_connect('std-mysql', 'std_938', 'qazwsxedc', 'std_938');
-              if( mysqli_connect_errno() )
-              return 'Ошибка подключения к БД: '.mysqli_connect_error();
+                $mysqli = mysqli_connect('std-mysql', 'std_938', 'qazwsxedc', 'std_938');
+                if( mysqli_connect_errno() )
+                return 'Ошибка подключения к БД: '.mysqli_connect_error();
 
-              $mysqli->query ("SET NAMES 'utf8'");
+                $mysqli->query ("SET NAMES 'utf8'");
 
 
-              // поиск
-              if( isset($_POST['srcBtn']) && $_POST['srcBtn']== 'Найти')
-              {
+                // поиск
+                if( isset($_POST['srcBtn']) && $_POST['srcBtn']== 'Найти')
+                {
+                  echo("<div class='d-flex flex-wrap'>");
+                  $result_set = $mysqli->query("SELECT * FROM `product` WHERE `name_product` LIKE '%".$_POST['search']."%'");
+                  printResult($result_set);
+                  echo("</div>");
+        
+                    if( mysqli_errno($mysqli) )
+                    echo '<div class="alert alert-danger mt-5">Произошла ошибка</div>';
+                }
+
+
+
+                echo("<h5 id='bombs' class='mt-5'>Бомбочки для ванн</h5>");
                 echo("<div class='d-flex flex-wrap'>");
-                $result_set = $mysqli->query("SELECT * FROM `product` WHERE `name_product` LIKE '%".$_POST['search']."%'");
+                $result_set = $mysqli->query("SELECT `product`.`name_product`, `brand`.`name_brand`, `model`.`id_model`, `product`.`img`, `product`.`description` FROM `product` JOIN `brand` ON (`product`.`id_brand` = `brand`.`id_brand`) JOIN `model` ON (`product`.`id_model` = `model`.`id_model`) WHERE `product`.`id_model` = 1 AND `product`.`id_brand` = 1");
                 printResult($result_set);
                 echo("</div>");
-      
-                  if( mysqli_errno($mysqli) )
-                  echo '<div class="alert alert-danger mt-5">Произошла ошибка</div>';
-              }
+
+                echo("<h5 id='foam' class='mt-5'>Пена для ванн</h5>");
+                echo("<div class='d-flex flex-wrap'>");
+                $result_set = $mysqli->query("SELECT `product`.`name_product`, `brand`.`name_brand`, `model`.`id_model`, `product`.`img`, `product`.`description` FROM `product` JOIN `brand` ON (`product`.`id_brand` = `brand`.`id_brand`) JOIN `model` ON (`product`.`id_model` = `model`.`id_model`) WHERE `product`.`id_model` = 2 AND `product`.`id_brand` = 1");
+                printResult($result_set);
+                echo("</div>");
+
+                echo("<h5 id='scrab' class='mt-5'>Скрабы</h5>");
+                echo("<div class='d-flex flex-wrap'>");
+                $result_set = $mysqli->query("SELECT `product`.`name_product`, `brand`.`name_brand`, `model`.`id_model`, `product`.`img`, `product`.`description` FROM `product` JOIN `brand` ON (`product`.`id_brand` = `brand`.`id_brand`) JOIN `model` ON (`product`.`id_model` = `model`.`id_model`) WHERE `product`.`id_model` = 3 AND `product`.`id_brand` = 1");
+                printResult($result_set);
+                echo("</div>");
+
+                echo("<h5 id='pearls' class='mt-5'>Жемчуг для ванн</h5>");
+                echo("<div class='d-flex flex-wrap'>");
+                $result_set = $mysqli->query("SELECT `product`.`name_product`, `brand`.`name_brand`, `model`.`id_model`, `product`.`img`, `product`.`description` FROM `product` JOIN `brand` ON (`product`.`id_brand` = `brand`.`id_brand`) JOIN `model` ON (`product`.`id_model` = `model`.`id_model`) WHERE `product`.`id_model` = 4 AND `product`.`id_brand` = 1");
+                printResult($result_set);
+                echo("</div>");
+
+                echo("<h5 id='soap' class='mt-5'>Мыло</h5>");
+                echo("<div class='d-flex flex-wrap'>");
+                $result_set = $mysqli->query("SELECT `product`.`name_product`, `brand`.`name_brand`, `model`.`id_model`, `product`.`img`, `product`.`description` FROM `product` JOIN `brand` ON (`product`.`id_brand` = `brand`.`id_brand`) JOIN `model` ON (`product`.`id_model` = `model`.`id_model`) WHERE `product`.`id_model` = 5 AND `product`.`id_brand` = 1");
+                printResult($result_set);
+                echo("</div>");
 
 
 
-              echo("<h5 id='bombs' class='mt-5'>Бомбочки для ванн</h5>");
-              echo("<div class='d-flex flex-wrap'>");
-              $result_set = $mysqli->query("SELECT `product`.`name_product`, `brand`.`name_brand`, `model`.`id_model`, `product`.`img`, `product`.`description` FROM `product` JOIN `brand` ON (`product`.`id_brand` = `brand`.`id_brand`) JOIN `model` ON (`product`.`id_model` = `model`.`id_model`) WHERE `product`.`id_model` = 1 AND `product`.`id_brand` = 1");
-              printResult($result_set);
-              echo("</div>");
+                $mysqli->close ();
+              ?>
 
-              echo("<h5 id='foam' class='mt-5'>Пена для ванн</h5>");
-              echo("<div class='d-flex flex-wrap'>");
-              $result_set = $mysqli->query("SELECT `product`.`name_product`, `brand`.`name_brand`, `model`.`id_model`, `product`.`img`, `product`.`description` FROM `product` JOIN `brand` ON (`product`.`id_brand` = `brand`.`id_brand`) JOIN `model` ON (`product`.`id_model` = `model`.`id_model`) WHERE `product`.`id_model` = 2 AND `product`.`id_brand` = 1");
-              printResult($result_set);
-              echo("</div>");
-
-              echo("<h5 id='scrab' class='mt-5'>Скрабы</h5>");
-              echo("<div class='d-flex flex-wrap'>");
-              $result_set = $mysqli->query("SELECT `product`.`name_product`, `brand`.`name_brand`, `model`.`id_model`, `product`.`img`, `product`.`description` FROM `product` JOIN `brand` ON (`product`.`id_brand` = `brand`.`id_brand`) JOIN `model` ON (`product`.`id_model` = `model`.`id_model`) WHERE `product`.`id_model` = 3 AND `product`.`id_brand` = 1");
-              printResult($result_set);
-              echo("</div>");
-
-              echo("<h5 id='pearls' class='mt-5'>Жемчуг для ванн</h5>");
-              echo("<div class='d-flex flex-wrap'>");
-              $result_set = $mysqli->query("SELECT `product`.`name_product`, `brand`.`name_brand`, `model`.`id_model`, `product`.`img`, `product`.`description` FROM `product` JOIN `brand` ON (`product`.`id_brand` = `brand`.`id_brand`) JOIN `model` ON (`product`.`id_model` = `model`.`id_model`) WHERE `product`.`id_model` = 4 AND `product`.`id_brand` = 1");
-              printResult($result_set);
-              echo("</div>");
-
-              echo("<h5 id='soap' class='mt-5'>Мыло</h5>");
-              echo("<div class='d-flex flex-wrap'>");
-              $result_set = $mysqli->query("SELECT `product`.`name_product`, `brand`.`name_brand`, `model`.`id_model`, `product`.`img`, `product`.`description` FROM `product` JOIN `brand` ON (`product`.`id_brand` = `brand`.`id_brand`) JOIN `model` ON (`product`.`id_model` = `model`.`id_model`) WHERE `product`.`id_model` = 5 AND `product`.`id_brand` = 1");
-              printResult($result_set);
-              echo("</div>");
-
-
-
-              $mysqli->close ();
-            ?>
-
-        </div> 
+          </div> 
 
         </div>
 
     </div>
 
 
-</div>
-
-
-</div>
+  </div>
 </main>
 
 
