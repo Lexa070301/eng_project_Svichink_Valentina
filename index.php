@@ -177,7 +177,7 @@
     <div class="row">
         <div class="col-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center align-items-center">
             <img src="img/about.jpg" class="img-fluid img-about" alt="Author of the project" width="300">
-            <div class="shadow row__pink d-none d-lg-block d-xl-block print-none"></div>
+            <div class="shadow row__pink d-none d-lg-block d-xl-block"></div>
         </div>
         <div class="col-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center align-items-center">
             <p class="text-center bg-white p-5">SAVLAS может сделать кадый твой день особенным! Именно этой идеи придерживалась наша компания, когда создавала данный бренд органической, натуральной косметики. Мы хотям, чтобы каждыя девушка была счастлива, желанна и любима всегда!<br><br> Будь вместе с нами, <br> SAVLAS</p>
