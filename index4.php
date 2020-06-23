@@ -83,7 +83,7 @@
                             <input type="submit" class="btn btn-dark col-12 col-lg-6 col-xl-6 mr-1 mb-3 mb-lg-0 mb-xl-0" name="save" value="Сохранить">
                             <input type="button" class="btn btn-dark col-12 col-lg-6 col-xl-6" value="Редактировать" name="ed" data-toggle="modal" data-target="#editModal">
                         </div>
-                        <input type="button" class="btn btn-pink my-3 w-100" value="Удалить свои данные из клиентской базы" name="del" data-toggle="collapse" href="#collapse" aria-expanded="false" aria-controls="collapse">
+                        <button type="button" class="btn btn-pink my-3 w-100" value="Удалить свои данные из клиентской базы" name="del" data-toggle="collapse" href="#collapse" aria-expanded="false" aria-controls="collapse">Удалить свои данные из клиентской базы</button>
                         <input type="submit" class="btn btn-blue w-100" value="Показать клиентскую базу" name="show">
                     </div>
                     <div class="col-lg-1 col-md-0 col-sm-0"></div>  
