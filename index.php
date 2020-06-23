@@ -74,7 +74,7 @@
 </div>
 </div>
 
-<a href="http://savlas.std-938.ist.mospolytech.ru/index2.php" type="button" class="btn btn-dark btn-lg btn-block mb-5">Смотреть продукцию от SAVLAS</a>
+<a href="http://savlas.std-938.ist.mospolytech.ru/index2.php" class="btn btn-dark btn-lg btn-block mb-5">Смотреть продукцию от SAVLAS</a>
 
 <div id="carouselExampleSlidesOnly" class="carousel slide">
     <div class="carousel-inner">
@@ -82,7 +82,7 @@
             <div class="row no-gutters">
                 <div class="col-1"></div>
                 <div class="col">
-                    <img class="img-fluid" src="img/red_hearts.jpg">
+                    <img class="img-fluid" src="img/red_hearts.jpg" alt="product image">
                     <div class="card">
                         <div class="card-body">
                             <p class="card-text">Бомбочки для ванны в виде сердец </p>
@@ -91,7 +91,7 @@
                     </div>
                 </div>
                 <div class="col d-none d-md-block d-lg-block d-xl-block">
-                    <img class="img-fluid" src="img/blue_bomb.jpg">
+                    <img class="img-fluid" src="img/blue_bomb.jpg" alt="product image">
                     <div class="card">
                         <div class="card-body">
                             <p class="card-text">Мятная бомбочка - сердце </p>
@@ -100,7 +100,7 @@
                     </div>
                 </div>
                 <div class="col d-none d-lg-block d-xl-block">
-                    <img class="img-fluid" src="img/bomb_flower.jpg">
+                    <img class="img-fluid" src="img/bomb_flower.jpg" alt="product image">
                     <div class="card">
                         <div class="card-body">
                             <p class="card-text">Цветочная бомбочка для ванн</p>
@@ -109,7 +109,7 @@
                     </div>
                 </div>
                 <div class="col d-none d-lg-block d-xl-block">
-                    <img class="img-fluid" src="img/balls.jpg">
+                    <img class="img-fluid" src="img/balls.jpg" alt="product image">
                     <div class="card">
                         <div class="card-body">
                             <p class="card-text">Скрабы одноразовые "Сахарные конфетки"</p>
@@ -124,7 +124,7 @@
             <div class="row no-gutters">
             <div class="col-1"></div>
                 <div class="col">
-                    <img class="img-fluid" src="img/cube_line.jpg">
+                    <img class="img-fluid" src="img/cube_line.jpg" alt="product image">
                     <div class="card">
                         <div class="card-body">
                             <p class="card-text">Скрабы одноразовые "Рахат лукум"</p>
@@ -133,7 +133,7 @@
                     </div>
                 </div>
                 <div class="col d-none d-md-block d-lg-block d-xl-block">
-                    <img class="img-fluid" src="img/dug.jpg">
+                    <img class="img-fluid" src="img/dug.jpg" alt="product image">
                     <div class="card">
                         <div class="card-body">
                             <p class="card-text">Бомбочка для ванны "Уточка" </p>
@@ -142,7 +142,7 @@
                     </div>
                 </div>
                 <div class="col d-none d-lg-block d-xl-block">
-                    <img class="img-fluid" src="img/diamond.jpg">
+                    <img class="img-fluid" src="img/diamond.jpg" alt="product image">
                     <div class="card">
                         <div class="card-body">
                             <p class="card-text">Бомбочки для ванн "Кристалл"</p>
@@ -151,7 +151,7 @@
                     </div>
                 </div>
                 <div class="col d-none d-lg-block d-xl-block">
-                    <img class="img-fluid" src="img/love.jpg">
+                    <img class="img-fluid" src="img/love.jpg" alt="product image">
                     <div class="card">
                         <div class="card-body">
                             <p class="card-text">Бомбочка для ванн "Love"</p>
@@ -187,7 +187,7 @@
 
 
 <br>
-<a href="http://savlas.std-938.ist.mospolytech.ru/index3.php" type="button" class="btn btn-dark btn-lg btn-block my-5">Смотреть продукцию других брендов</a>
+<a href="http://savlas.std-938.ist.mospolytech.ru/index3.php" class="btn btn-dark btn-lg btn-block my-5">Смотреть продукцию других брендов</a>
 
 <div id="carouselExampleSlidesOnly2" class="carousel slide mb-5">
     <div class="carousel-inner">
@@ -195,7 +195,7 @@
             <div class="row no-gutters">
                 <div class="col-1"></div>
                 <div class="col">
-                    <img class="img-fluid" src="img/leo1.jpg">
+                    <img class="img-fluid" src="img/leo1.jpg" alt="product image">
                     <div class="card">
                         <div class="card-body">
                             <p class="card-text">LEOSILVER <br>Крем для стоп<br></p>
@@ -204,7 +204,7 @@
                     </div>
                 </div>
                 <div class="col d-none d-md-block d-lg-block d-xl-block">
-                    <img class="img-fluid" src="img/let1.jpg">
+                    <img class="img-fluid" src="img/let1.jpg" alt="product image">
                     <div class="card">
                         <div class="card-body">
                             <p class="card-text">LETIQUE<br>Холодное обертывание</p>
@@ -213,7 +213,7 @@
                     </div>
                 </div>
                 <div class="col d-none d-lg-block d-xl-block">
-                    <img class="img-fluid" src="img/bb1.jpg">
+                    <img class="img-fluid" src="img/bb1.jpg" alt="product image">
                     <div class="card">
                         <div class="card-body">
                             <p class="card-text">BUBBLE_BAR<br>Набор для SPA "Милка"</p>
@@ -222,7 +222,7 @@
                     </div>
                 </div>
                 <div class="col d-none d-lg-block d-xl-block">
-                    <img class="img-fluid" src="img/freshtime1.jpg">
+                    <img class="img-fluid" src="img/freshtime1.jpg" alt="product image">
                     <div class="card">
                         <div class="card-body">
                             <p class="card-text">FRESHTIME<br>Шиммер для ванны<br></p>
@@ -237,7 +237,7 @@
             <div class="row no-gutters">
             <div class="col-1"></div>
                 <div class="col">
-                    <img class="img-fluid" src="img/leo2.jpg">
+                    <img class="img-fluid" src="img/leo2.jpg" alt="product image">
                     <div class="card">
                         <div class="card-body">
                             <p class="card-text">LEOSILVER <br>Морская соль для ванн</p>
@@ -246,7 +246,7 @@
                     </div>
                 </div>
                 <div class="col d-none d-md-block d-lg-block d-xl-block">
-                    <img class="img-fluid" src="img/let2.jpg">
+                    <img class="img-fluid" src="img/let2.jpg" alt="product image">
                     <div class="card">
                         <div class="card-body">
                             <p class="card-text">LETIQUE<br>Набор "Авокадо"<br></p>
@@ -255,7 +255,7 @@
                     </div>
                 </div>
                 <div class="col d-none d-lg-block d-xl-block">
-                    <img class="img-fluid" src="img/bb2.jpg">
+                    <img class="img-fluid" src="img/bb2.jpg" alt="product image">
                     <div class="card">
                         <div class="card-body">
                             <p class="card-text">BUBBLE_BAR<br>Набор для SPA "Принцесса"</p>
@@ -264,7 +264,7 @@
                     </div>
                 </div>
                 <div class="col d-none d-lg-block d-xl-block">
-                    <img class="img-fluid" src="img/let3.jpg">
+                    <img class="img-fluid" src="img/let3.jpg" alt="product image">
                     <div class="card">
                         <div class="card-body">
                             <p class="card-text">LETIQUE<br>Горячее обертывание<br></p>
