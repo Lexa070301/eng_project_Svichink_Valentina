@@ -40,7 +40,7 @@
             <div class="col-0 col-md-3 col-lg-3 col-xl-3"></div>
             <div class="col-12 col-md-9 col-lg-9 col-xl-9">
             <nav class="card card-body d-flex flex-row">
-                <a href="http://savlas.std-938.ist.mospolytech.ru/" class="text-muted mr-1">Главная</a></li>/
+                <a href="http://savlas.std-938.ist.mospolytech.ru/" class="text-muted mr-1">Главная</a>/
                 <a href="http://savlas.std-938.ist.mospolytech.ru/index3.php" class="text-dark ml-2">Продукция от других брендов</a>
             </nav>
             </div>
@@ -56,7 +56,7 @@
             </td></tr>
 
             <tr><td>
-                <a class="text-dark"href="#leosilver">LEOSILVER</a>
+                <a class="text-dark" href="#leosilver">LEOSILVER</a>
             </td></tr>
 
             <tr><td>
@@ -68,7 +68,7 @@
             </td></tr>
 
             <tr><td>
-                <a class="text-dark"href="#ok">ORGANIC KITCHEN</a>
+                <a class="text-dark" href="#ok">ORGANIC KITCHEN</a>
             </td></tr>
         </tbody>
         </table>
@@ -92,7 +92,7 @@
                 while (($row  =  $result_set->fetch_assoc()) !=false) {
       
                     echo("<div class='w-25 mx-1 mx-sm-2 mx-md-3 mb-3 border-dark p-1 p-md-3 rounded shadow d-flex align-items-normal justify-content-between flex-column bg-white card-small'>
-                    <img class='img-fluid card-img' src='img/".$row['img']."'>
+                    <img class='img-fluid card-img' src='img/".$row['img']."' alt='product image'>
                     <h6 class='mt-2'>".$row['name_product']."</h6>
                     <p class='text-muted'>".$row['name_brand']."</p>
                     <a tabindex='0' class='btn btn-dark text-white' role='button'
@@ -168,9 +168,7 @@
     </div>
 
 
-</div>
-
-</div>
+  </div>
 </main>
 
 
