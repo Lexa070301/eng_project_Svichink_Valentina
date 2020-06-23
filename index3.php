@@ -40,8 +40,8 @@
             <div class="col-0 col-md-3 col-lg-3 col-xl-3"></div>
             <div class="col-12 col-md-9 col-lg-9 col-xl-9">
             <nav class="card card-body d-flex flex-row">
-                <a href="http://php.std-938.ist.mospolytech.ru/php_labs/savlas.ru/" class="text-muted mr-1">Главная</a></li>/
-                <a href="#" class="text-dark ml-2">Продукция от других производителей</a>
+                <a href="http://savlas.std-938.ist.mospolytech.ru/" class="text-muted mr-1">Главная</a></li>/
+                <a href="http://savlas.std-938.ist.mospolytech.ru/index3.php" class="text-dark ml-2">Продукция от других брендов</a>
             </nav>
             </div>
         </div>

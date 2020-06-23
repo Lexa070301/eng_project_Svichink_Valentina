@@ -74,7 +74,7 @@
 </div>
 </div>
 
-<a href="http://php.std-938.ist.mospolytech.ru/php_labs/savlas.ru/index2.php" type="button" class="btn btn-dark btn-lg btn-block mb-5">Смотреть продукцию от SAVLAS</a>
+<a href="http://savlas.std-938.ist.mospolytech.ru/index2.php" type="button" class="btn btn-dark btn-lg btn-block mb-5">Смотреть продукцию от SAVLAS</a>
 
 <div id="carouselExampleSlidesOnly" class="carousel slide">
     <div class="carousel-inner">
@@ -187,7 +187,7 @@
 
 
 <br>
-<a href="http://php.std-938.ist.mospolytech.ru/php_labs/savlas.ru/index3.php" type="button" class="btn btn-dark btn-lg btn-block my-5">Смотреть продукцию других брендов</a>
+<a href="http://savlas.std-938.ist.mospolytech.ru/index3.php" type="button" class="btn btn-dark btn-lg btn-block my-5">Смотреть продукцию других брендов</a>
 
 <div id="carouselExampleSlidesOnly2" class="carousel slide mb-5">
     <div class="carousel-inner">
