@@ -110,6 +110,9 @@ main {
     page-break-inside: avoid; }
 
   h5 {
-    page-break-before: always; } }
+    page-break-before: always; }
+
+  .row__pink {
+    background-color: #a3a3a3; } }
 
 /*# sourceMappingURL=style.css.map */
