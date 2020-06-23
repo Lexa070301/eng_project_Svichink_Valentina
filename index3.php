@@ -78,12 +78,12 @@
         <div class="col-12 col-sm-9">
             <h2 class="mb-5">Каталог товаров</h2>
             <form action="index3.php" method="post">
-            <div class="form-group">
-              <label for="search"><strong>Поиск по каталогу</strong></label>
-              <dix class="d-flex">
-                <input type="text" class="form-control" id="search" placeholder="Введите название товара" name="search">
-                <input type="submit" type="Начать поиск" class="btn btn-outline-secondary" value="Найти" name="srcBtn">
-              </dix>
+            <div class="form-group row">
+              <label for="search" class="col-12"><strong>Поиск по каталогу</strong></label>
+              <div class="row d-flex flex-wrap col-12">
+                <input type="text" class="form-control col-12 col-sm-8" id="search" placeholder="Введите название товара" name="search">
+                <input type="submit" type="Начать поиск" class="btn btn-outline-secondary col-12 col-sm-1" value="Найти" name="srcBtn">
+              </div>
             </div>
             </form>
 
